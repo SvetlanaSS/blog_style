@@ -5,11 +5,10 @@ import logo from './logo.png';
 class Header extends Component {
     render() {
       const HeaderWrapper = styled.div`
-      background: #fff;
-      height: 3.5rem;
+      background: #F1F0F0;
+      height: 5rem;
       left: 0;
       overflow:auto;
-      position: fixed;
       right: 0;
       top: 0;
       z-index: 999;

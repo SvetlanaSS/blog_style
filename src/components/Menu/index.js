@@ -11,7 +11,7 @@ class Menu extends Component {
     `;
 
     const MenuList = styled.li`
-      font-size: 16px;
+      font-size: 1 rem;
       display: inline-block;
       width: 25%;
       box-sizing: border-box;
@@ -21,7 +21,7 @@ class Menu extends Component {
     const MenuLink = styled.a`
       color: #000;
       display: block;
-      padding: 20px;
+      padding: 1.2rem;
       text-decoration: none;
     `;
 
