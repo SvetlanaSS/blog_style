@@ -4,7 +4,7 @@ import styled from 'styled-components';
 class Footer extends Component {
   render() {
     const Footer = styled.footer `
-      background: #F1F0F0;
+      background: #FCFBFB;
       color: #000;
       text-align: center;
       padding: 1rem;
