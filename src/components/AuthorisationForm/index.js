@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Form, FormGroup, Col, FormControl, Checkbox, Button, ButtonToolbar, ControlLabel } from 'react-bootstrap';
-import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
 import FacebookAuthorisation from './FacebookAuthorisation';
 import LoginForm from './LoginForm';
 
