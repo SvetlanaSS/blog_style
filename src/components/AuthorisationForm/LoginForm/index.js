@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from '../../../api/firebase';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -7,15 +8,18 @@ class LoginForm extends Component {
       email: '',
       password: ''
     };
+
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleOnChange = (e) => {
+  handleOnChange(e) {
     this.setState({ [e.target.name] : e.target.value });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+    firebase.auth().signInWithEmailAndPassword({email: this.state.email, password: this.state.password});
   }
 
   render() {
