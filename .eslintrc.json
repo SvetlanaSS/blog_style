@@ -16,7 +16,7 @@
     "plugins": [
         "react"
     ],
-    "parser": "babel-eslint",
+
     "globals": {
         "process": true
     },
