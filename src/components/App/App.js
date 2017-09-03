@@ -4,7 +4,7 @@ import './App.css';
 import Header from '../Header';
 import Menu from '../Menu';
 import Footer from '../Footer';
-import LoginWindow from '../LoginWindow';
+import LoginWindow from '../AuthorisationForm';
 
 class App extends Component {
   render() {
