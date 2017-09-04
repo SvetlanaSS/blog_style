@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-// import firebase from '../../../api/firebase';
+import firebase from '../../../api/firebase';
 
 class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      errorMessage: ''
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -18,8 +19,11 @@ class LoginForm extends Component {
   }
 
   handleSubmit(e) {
+    const { email, password } = this.state;
     e.preventDefault();
-    // firebase.auth.signInWithEmailAndPassword(this.state);
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
+      this.setState({ errorMessage: error.message });
+    });
   }
 
   render() {
@@ -45,6 +49,9 @@ class LoginForm extends Component {
             className="btn"
             value="Log in"
           />
+          <div>
+            {this.state.errorMessage}
+          </div>
         </form>
       </section>
     );
