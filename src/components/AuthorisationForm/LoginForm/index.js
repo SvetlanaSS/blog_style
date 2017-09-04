@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from '../../../api/firebase';
+// import firebase from '../../../api/firebase';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class LoginForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword({email: this.state.email, password: this.state.password});
+    // firebase.auth.signInWithEmailAndPassword(this.state);
   }
 
   render() {
