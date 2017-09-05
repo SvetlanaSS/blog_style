@@ -30,25 +30,31 @@ class LoginForm extends Component {
     return (
       <section>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="email"
-            className="form-control"
-            placeholder="Email"
-            onChange={this.handleOnChange}
-          />
-          <input
-            type="text"
-            name="password"
-            className="form-control"
-            placeholder="Password"
-            onChange={this.handleOnChange}
-          />
-          <input
-            type="submit"
-            className="btn"
-            value="Log in"
-          />
+          <div>
+            <input
+              type="text"
+              name="email"
+              className="form-control"
+              placeholder="Email"
+              onChange={this.handleOnChange}
+            />
+          </div>
+          <div style={{paddingTop: '1rem'}}>
+            <input
+              type="text"
+              name="password"
+              className="form-control"
+              placeholder="Password"
+              onChange={this.handleOnChange}
+            />
+          </div>
+          <div style={{paddingTop: '1rem'}}>
+            <input
+              type="submit"
+              className="btn btn-block"
+              value="Log in"
+            />
+          </div>
           <div>
             {this.state.errorMessage}
           </div>
@@ -59,17 +65,3 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
-
-
-
-  // const MiddleDiv = styled.div `
-  //   height: 200px;
-  // `;
-  //
-  // const MiddleDivItem = styled.div `
-  //   height: 200px;
-  //   display: inline-block;
-  //   width: 50%;
-  //   padding-left: 5rem;
-  //   padding-top: 2rem;
-  // `;
