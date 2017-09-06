@@ -15,30 +15,36 @@ class LoginForm extends Component {
 
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.validateField = this.validateField.bind(this);
   }
 
   handleOnChange(e) {
     this.setState({ [e.target.name] : e.target.value });
+    this.validateField(e.target.name, e.target.value);
   }
 
-  // validateField(fieldName, value) {
-  //   let emailValid = this.state.emailValid;
-  //   let passwordValid = this.state.passwordValid;
-  //
-  //   if(this.state.username && this.state.password) {
-  //     this.setState( {error: false} )
-  //   } else {
-  //     this.setState( {error: true} )
-  //   }
-  //   }
-  // }
+  validateField(fieldName, value){
+    switch(fieldName) {
+    case 'email':
+      value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? this.setState({ emailError: false }) : this.setState({ emailError: true });
+      break;
+    case 'password':
+      value.length >= 6 ? this.setState({ passwordError: false }) : this.setState({ passwordError: true });
+      break;
+    default:
+      break;
+    }
+  }
 
   handleSubmit(e) {
-    const { email, password } = this.state;
+    const { email, password, emailError, passwordError } = this.state;
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
-      this.setState({ errorMessageFirebase: error.message });
-    });
+
+    if (!emailError && !passwordError) {
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
+        this.setState({ errorMessageFirebase: error.message });
+      });
+    }
   }
 
   render() {
