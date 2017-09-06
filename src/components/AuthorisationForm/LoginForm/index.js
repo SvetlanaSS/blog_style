@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../../../api/firebase';
+import './style.css';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -7,7 +8,9 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
-      errorMessage: ''
+      emailError: false,
+      passwordError: false,
+      errorMessageFirebase: ''
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -18,15 +21,31 @@ class LoginForm extends Component {
     this.setState({ [e.target.name] : e.target.value });
   }
 
+  // validateField(fieldName, value) {
+  //   let emailValid = this.state.emailValid;
+  //   let passwordValid = this.state.passwordValid;
+  //
+  //   if(this.state.username && this.state.password) {
+  //     this.setState( {error: false} )
+  //   } else {
+  //     this.setState( {error: true} )
+  //   }
+  //   }
+  // }
+
   handleSubmit(e) {
     const { email, password } = this.state;
     e.preventDefault();
     firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
-      this.setState({ errorMessage: error.message });
+      this.setState({ errorMessageFirebase: error.message });
     });
   }
 
   render() {
+    const { email, password, errorMessageFirebase, emailError, passwordError } = this.state;
+    const emailErrorMessage = emailError ? 'hasDanger' : '';
+    const passwordErrorMessage = passwordError ? 'hasDanger' : '';
+
     return (
       <section>
         <form onSubmit={this.handleSubmit}>
@@ -34,29 +53,32 @@ class LoginForm extends Component {
             <input
               type="text"
               name="email"
-              className="form-control"
+              className={`form-control ${emailErrorMessage}`}
               placeholder="Email"
               onChange={this.handleOnChange}
             />
+            { emailError && <div>Email is not valid!</div> }
           </div>
-          <div style={{paddingTop: '1rem'}}>
+          <div style={{paddingTop: '1rem'}} className="form-group">
             <input
-              type="text"
+              type="password"
               name="password"
-              className="form-control"
+              className={`form-control ${passwordErrorMessage}`}
               placeholder="Password"
               onChange={this.handleOnChange}
             />
+            { passwordError && <div>Password is too short!</div> }
           </div>
           <div style={{paddingTop: '1rem'}}>
             <input
+              disabled={!(email && password)}
               type="submit"
               className="btn btn-block"
               value="Log in"
             />
           </div>
           <div>
-            {this.state.errorMessage}
+            {errorMessageFirebase}
           </div>
         </form>
       </section>
