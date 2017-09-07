@@ -27,7 +27,7 @@ export default function(state = initialState, action) {
   case AUTH_ERROR:
     return {
       authenticated: false,
-      message: 'Error',
+      message: action.message,
     };
   default:
     return state;

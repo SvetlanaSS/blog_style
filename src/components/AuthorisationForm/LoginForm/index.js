@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import firebase from '../../../api/firebase';
+import { connect } from 'react-redux';
+import { signInUser } from '../../../actions/auth';
+import { bindActionCreators } from 'redux';
 import './style.css';
 
 class LoginForm extends Component {
@@ -9,21 +11,16 @@ class LoginForm extends Component {
       email: '',
       password: '',
       emailError: false,
-      passwordError: false,
-      errorMessageFirebase: ''
+      passwordError: false
     };
-
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.validateField = this.validateField.bind(this);
   }
 
-  handleOnChange(e) {
+  handleOnChange = (e) => {
     this.setState({ [e.target.name] : e.target.value });
     this.validateField(e.target.name, e.target.value);
   }
 
-  validateField(fieldName, value){
+  validateField = (fieldName, value) => {
     switch(fieldName) {
     case 'email':
       value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? this.setState({ emailError: false }) : this.setState({ emailError: true });
@@ -36,19 +33,17 @@ class LoginForm extends Component {
     }
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     const { email, password, emailError, passwordError } = this.state;
     e.preventDefault();
 
     if (!emailError && !passwordError) {
-      firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
-        this.setState({ errorMessageFirebase: error.message });
-      });
+      this.props.signInUser(email, password);
     }
   }
 
   render() {
-    const { email, password, errorMessageFirebase, emailError, passwordError } = this.state;
+    const { email, password, emailError, passwordError } = this.state;
     const emailErrorMessage = emailError ? 'hasDanger' : '';
     const passwordErrorMessage = passwordError ? 'hasDanger' : '';
 
@@ -83,8 +78,8 @@ class LoginForm extends Component {
               value="Log in"
             />
           </div>
-          <div>
-            {errorMessageFirebase}
+          <div style={{textAlign: 'center', paddingTop: '1rem'}}>
+            {this.props.message}
           </div>
         </form>
       </section>
@@ -92,4 +87,15 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.authenticated,
+    message: state.auth.message
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ signInUser }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
