@@ -15,7 +15,7 @@ class LoginWindow extends Component {
       justify-content: center;
 
       @media(min-width: 768px) {
-        width: 50%;
+        width: 30%;
       }
     `;
 
