@@ -10,8 +10,8 @@ import {
 export function signInUser(email, password) {
   return dispatch => {
     dispatch({ type: AUTH_STARTED });
-    firebase.auth().signInWithEmailAndPassword(email, password);
-    dispatch(showLoader())
+    dispatch(showLoader());
+    firebase.auth().signInWithEmailAndPassword(email, password)
       .then(() => {
         dispatch({ type: USER_AUTHORIZED });
         dispatch(hideLoader());
