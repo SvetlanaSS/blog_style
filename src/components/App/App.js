@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Dashboard from '../Dashboard';
 import Footer from '../Footer';
 import LoginWindow from '../AuthorisationForm';
+import Loader from '../Loader';
 
 class App extends Component {
   render() {
@@ -12,7 +13,8 @@ class App extends Component {
     return (
       <div>
         {/* <Header/> */}
-        { !authenticated ? <Dashboard /> : <LoginWindow/> }
+        { authenticated ? <Dashboard /> : <LoginWindow/> }
+        <Loader />
         <Footer/>
       </div>
     );

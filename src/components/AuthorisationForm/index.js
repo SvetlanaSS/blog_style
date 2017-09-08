@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import FacebookAuthorisation from './FacebookAuthorisation';
 import LoginForm from './LoginForm';
+import Loader from '../Loader';
 
 class LoginWindow extends Component {
   render() {
@@ -28,6 +29,7 @@ class LoginWindow extends Component {
     return (
       <WindowForm>
         <FacebookAuthorisation />
+        <Loader />
         <LoginForm />
         <BottomDiv>
           By creating an account, I accept BlogStyle's Terms of Service
