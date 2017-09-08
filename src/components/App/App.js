@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-// import Header from '../Header';
+import Header from '../Header';
 import Dashboard from '../Dashboard';
 import Footer from '../Footer';
 import LoginWindow from '../AuthorisationForm';
@@ -12,8 +12,8 @@ class App extends Component {
     const { authenticated } = this.props;
     return (
       <div>
-        {/* <Header/> */}
-        { authenticated ? <Dashboard /> : <LoginWindow/> }
+        <Header/>
+        { !authenticated ? <Dashboard /> : <LoginWindow/> }
         <Loader />
         <Footer/>
       </div>

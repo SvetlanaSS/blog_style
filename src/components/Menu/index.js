@@ -11,7 +11,7 @@ class Menu extends Component {
     `;
 
     const MenuList = styled.li`
-      font-size: 1 rem;
+      font-size: 1.7rem;
       display: inline-block;
       width: 25%;
       box-sizing: border-box;
@@ -23,15 +23,24 @@ class Menu extends Component {
       display: block;
       padding: 1.2rem;
       text-decoration: none;
+      &:hover {
+        color: black;
+      }
+      &:visited {
+        color: black;
+      }
     `;
 
     return (
       <nav>
         <MenuWrapper>
+          <li>Home</li>
+          <li>Home 2</li>
           <MenuList><MenuLink href="#">Fashion</MenuLink></MenuList>
           <MenuList><MenuLink href="#">Beauty</MenuLink></MenuList>
           <MenuList><MenuLink href="#">Fitness</MenuLink></MenuList>
           <MenuList><MenuLink href="#">Lifestyle</MenuLink></MenuList>
+          <div>Hello</div>
         </MenuWrapper>
       </nav>
     );
