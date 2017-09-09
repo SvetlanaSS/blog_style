@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header';
-import Dashboard from '../Dashboard';
 import Footer from '../Footer';
 import LoginWindow from '../AuthorisationForm';
 import Loader from '../Loader';
+import Menu from '../Menu';
 
 class App extends Component {
   render() {
@@ -12,7 +12,8 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        { !authenticated ? <Dashboard /> : <LoginWindow/> }
+        { authenticated ? <Menu /> : null }
+        { authenticated ? this.props.children : <LoginWindow/> }
         <Loader />
         <Footer/>
       </div>

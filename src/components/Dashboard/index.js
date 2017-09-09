@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Thumbnail, Button } from 'react-bootstrap';
-import Menu from '../Menu';
 
 class Dashboard extends Component {
   render() {
@@ -42,7 +41,6 @@ class Dashboard extends Component {
     );
     return (
       <section>
-        <Menu />
         { thumbnailInstance }
         { thumbnailInstance }
         { thumbnailInstance }

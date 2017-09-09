@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import logo from './logo.png';
 
 class Header extends Component {
@@ -14,14 +15,14 @@ class Header extends Component {
       z-index: 999;
     `;
 
-    const Logo = styled.div`
+    const Logo = styled(Link)`
       margin-left: 1rem;
       margin-top: 0.50rem;
     `;
 
     return (
       <HeaderWrapper>
-        <Logo>
+        <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
       </HeaderWrapper>);

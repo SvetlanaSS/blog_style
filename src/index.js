@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import reduxStore from './store';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './index.css';
 import App from './components/App/App.js';
-import Dashboard from './components/Dashboard';
+import Page from './components/Page';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = reduxStore();
@@ -15,8 +15,11 @@ ReactDOM.render(
     <Router>
       <Switch>
         <App>
-          <Route exact path="/" component={Dashboard} />
-
+          <Route exact path="/" render={() => <Redirect to="/fashion" /> }/>
+          <Route path="/fashion" component={Page} />
+          <Route path="/fitness" component={Page} />
+          <Route path="/beauty" component={Page} />
+          <Route path="/lifestyle" component={Page} />
         </App>
       </Switch>
     </Router>
