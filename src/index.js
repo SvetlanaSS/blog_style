@@ -19,7 +19,7 @@ ReactDOM.render(
           <Route path="/fashion" component={Page} />
           <Route path="/fitness" component={Page} />
           <Route path="/beauty" component={Page} />
-          <Route path="/lifestyle" component={Page} />
+          {/* <Route path="/lifestyle" component={Page} /> */}
         </App>
       </Switch>
     </Router>

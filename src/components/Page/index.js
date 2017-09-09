@@ -6,30 +6,34 @@ class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      blogPosts: []
+      fashion: {},
+      beauty: {},
+      fitness: {}
     };
   }
 
   componentDidMount() {
-    return firebase.database().ref('/blog_posts/').once('value').then(data => {
-      const blogPosts = data.val();
-      this.setState({ blogPosts });
+    return firebase.database().ref('/fitness/').once('value').then(data => {
+      this.setState({ fitness: data.val() });
     });
   }
 
-  renderBlogpost = (post, i) => {
-    return <BlogPost key={i} post={post} />;
+  renderPosts = () => {
+    const { fitness } = this.state;
+    if (Object.keys(fitness).length) {
+      return Object.keys(fitness).map(key => {
+        return <BlogPost key={key} post={fitness[key]} />;
+      });
+    }
   }
 
   render() {
-    const { blogPosts } = this.state;
     return (
       <section>
-        {blogPosts.map(this.renderBlogpost)}
+        {this.renderPosts()}
       </section>
     );
   }
 }
-
 
 export default Page;

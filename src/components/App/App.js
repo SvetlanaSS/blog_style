@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        { authenticated ? <Menu /> : null }
-        { authenticated ? this.props.children : <LoginWindow/> }
+        { !authenticated ? <Menu /> : null }
+        { !authenticated ? this.props.children : <LoginWindow/> }
         <Loader />
         <Footer/>
       </div>

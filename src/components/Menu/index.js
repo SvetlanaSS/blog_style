@@ -14,7 +14,7 @@ class Menu extends Component {
     const MenuList = styled.li`
       font-size: 1.7rem;
       display: inline-block;
-      width: 25%;
+      width: 33%;
       box-sizing: border-box;
       text-align: center;
     `;
@@ -39,7 +39,7 @@ class Menu extends Component {
             <MenuList><MenuLink to="/fashion">Fashion</MenuLink></MenuList>
             <MenuList><MenuLink to="/beauty">Beauty</MenuLink></MenuList>
             <MenuList><MenuLink to="/fitness">Fitness</MenuLink></MenuList>
-            <MenuList><MenuLink to="/lifestyle">Lifestyle</MenuLink></MenuList>
+            {/* <MenuList><MenuLink to="/lifestyle">Lifestyle</MenuLink></MenuList> */}
           </ul>
         </MenuWrapper>
       </nav>
