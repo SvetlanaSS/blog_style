@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 class Menu extends Component {
@@ -19,13 +19,13 @@ class Menu extends Component {
       text-align: center;
     `;
 
-    const MenuLink = styled.a`
+    const MenuLink = styled(NavLink)`
       color: #000;
       display: block;
       padding: 1.2rem;
-      text-decoration: none;
       &:hover {
         color: black;
+        text-decoration: none;
       }
       &:visited {
         color: black;
@@ -35,10 +35,12 @@ class Menu extends Component {
     return (
       <nav>
         <MenuWrapper>
-          <MenuList><MenuLink href="#">Fashion</MenuLink></MenuList>
-          <MenuList><MenuLink href="#">Beauty</MenuLink></MenuList>
-          <MenuList><MenuLink href="#">Fitness</MenuLink></MenuList>
-          <MenuList><MenuLink href="#">Lifestyle</MenuLink></MenuList>
+          <ul>
+            <MenuList><MenuLink to="/fashion">Fashion</MenuLink></MenuList>
+            <MenuList><MenuLink to="/beauty">Beauty</MenuLink></MenuList>
+            <MenuList><MenuLink to="/fitness">Fitness</MenuLink></MenuList>
+            <MenuList><MenuLink to="/lifestyle">Lifestyle</MenuLink></MenuList>
+          </ul>
         </MenuWrapper>
       </nav>
     );
