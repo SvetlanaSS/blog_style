@@ -2,19 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import reduxStore from './store';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './components/App/App.js';
+import Dashboard from './components/Dashboard';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = reduxStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <Switch>
+        <App>
+          <Route exact path="/" component={Dashboard} />
+
+        </App>
+      </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
 registerServiceWorker();
+
 
 if (module.hot) {
   module.hot.accept(Provider, () => {

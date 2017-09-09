@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import styled from 'styled-components';
 
 class Menu extends Component {
@@ -34,13 +35,10 @@ class Menu extends Component {
     return (
       <nav>
         <MenuWrapper>
-          <li>Home</li>
-          <li>Home 2</li>
           <MenuList><MenuLink href="#">Fashion</MenuLink></MenuList>
           <MenuList><MenuLink href="#">Beauty</MenuLink></MenuList>
           <MenuList><MenuLink href="#">Fitness</MenuLink></MenuList>
           <MenuList><MenuLink href="#">Lifestyle</MenuLink></MenuList>
-          <div>Hello</div>
         </MenuWrapper>
       </nav>
     );
