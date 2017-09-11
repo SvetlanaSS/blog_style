@@ -4,7 +4,8 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  showModal: false
+  showModal: false,
+  post: {}
 };
 
 export default function(state = initialState, action) {
@@ -12,10 +13,12 @@ export default function(state = initialState, action) {
   case SHOW_MODAL:
     return {
       showModal: true,
+      post: action.post
     };
   case HIDE_MODAL:
     return {
       showModal: false,
+      post: {}
     };
   default:
     return state;

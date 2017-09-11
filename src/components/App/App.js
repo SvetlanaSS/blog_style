@@ -5,6 +5,7 @@ import Footer from '../Footer';
 import LoginWindow from '../AuthorisationForm';
 import Loader from '../Loader';
 import Menu from '../Menu';
+import BlogPostModal from '../BlogPostModal';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         { !authenticated ? <Menu /> : null }
         { !authenticated ? this.props.children : <LoginWindow/> }
         <Loader />
+        <BlogPostModal />
         <Footer/>
       </div>
     );

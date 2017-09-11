@@ -3,9 +3,10 @@ import {
   HIDE_MODAL,
 } from './types';
 
-export function showModal() {
+export function showModal(post) {
   return {
-    type: SHOW_MODAL
+    type: SHOW_MODAL,
+    post: post
   };
 }
 
