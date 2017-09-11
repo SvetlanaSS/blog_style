@@ -5,14 +5,10 @@ import { Modal, Button } from 'react-bootstrap';
 import { hideModal } from '../../actions/modal';
 
 class BlogPostModal extends Component {
-  onHide = () => {
-    this.props.hideModal();
-  }
-
   render() {
-    const post = { title: 111, description: 'fjkldshfjksdhkfj', date: 1231, hashtag: 1111 };
-    return(
-      <Modal {...this.props} bsSize="large" aria-labelledby="contained-modal-title-lg">
+    const { post, showModal, hideModal } = this.props;
+    return (
+      <Modal show={showModal} onHide={() => hideModal()} bsSize="large" aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-lg">{post.title}</Modal.Title>
         </Modal.Header>
@@ -22,7 +18,7 @@ class BlogPostModal extends Component {
           <p style={{color: 'grey'}}>{post.hashtag}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => this.onHide()}>Close</Button>
+          <Button onClick={() => hideModal()}>Close</Button>
         </Modal.Footer>
       </Modal>
     );
@@ -31,7 +27,8 @@ class BlogPostModal extends Component {
 
 function mapStateToProps(state) {
   return {
-    show: state.modal.showModal
+    showModal: state.modal.showModal,
+    post: state.modal.post
   };
 }
 
