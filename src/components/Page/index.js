@@ -21,7 +21,7 @@ class Page extends Component {
   renderPosts = () => {
     const { fitness } = this.state;
     if (Object.keys(fitness).length) {
-      return Object.keys(fitness).map(key => {
+      return Object.keys(fitness).map((key)  => {
         return <BlogPost key={key} post={fitness[key]} />;
       });
     }
@@ -29,8 +29,10 @@ class Page extends Component {
 
   render() {
     return (
-      <section>
-        {this.renderPosts()}
+      <section className="columns">
+        <div className="column">
+          {this.renderPosts()}
+        </div>
       </section>
     );
   }

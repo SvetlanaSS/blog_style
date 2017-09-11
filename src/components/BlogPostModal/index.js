@@ -10,7 +10,6 @@ class BlogPostModal extends Component {
   }
 
   render() {
-    console.log(this.props);
     const post = { title: 111, description: 'fjkldshfjksdhkfj', date: 1231, hashtag: 1111 };
     return(
       <Modal {...this.props} bsSize="large" aria-labelledby="contained-modal-title-lg">
@@ -19,7 +18,7 @@ class BlogPostModal extends Component {
         </Modal.Header>
         <Modal.Body>
           <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
-          <p>{post.description.slice(0, 130) + '...'}</p>
+          <p>{post.description}</p>
           <p style={{color: 'grey'}}>{post.hashtag}</p>
         </Modal.Body>
         <Modal.Footer>
