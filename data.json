@@ -1,40 +1,224 @@
 {
   "fashion": {
-    "one": {
+    "1": {
       "id": 1,
       "title": "How to be fashionable with no money",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_1.jpg?alt=media&token=32f8352b-ec7f-4d06-8f88-02063d66a35d",
       "description": "One of the biggest misconceptions that exists about fashion – and there are many – is that it requires money. No question, the fault for this lies with fashion writers because we tend to write mainly about big (read: expensive) brands. There are several reasons for this, none of which, incidentally, are the ones most people assume, namely, that fashion writers are idiots and think everyone out there spends their Saturday mornings at Louis Vuitton, or, alternatively, that fashion writers are basically a load of Mean Girls, here to make everyone else feel miserable about their un-bling lifestyle.\n Rather, the answer is far more prosaic, which is French for boring: fashion writers are quite lazy. Expensive brands have more money to send out press releases, hold shows, pay for advertising. Therefore, fashion writers are basically spoon-fed the information without having to go out and look for it. (Some fashion writers, of course, are obliged to write nice things about expensive brands because the brands advertise in their publication. Happily, that is not a problem here at the Guardian, where the only fashion I ever see regularly advertised is men’s slacks from the Guardian store. And jolly stylish they are too, I’d wager my Guardian store-bought hat on it.)\n And that, Gen Y, is the rub when it comes to fashionable cheap clothes: they require effort to find. Which is not to say that all expensive things are nice (to be honest, a lot of expensive stuff looks to me like it comes from Imelda Marcos’s garage sale), but it is at least more visible. Good cheap stuff requires some nosing out on your part.",
       "date": "2017-09-05",
       "hashtag": "#fashion #nomoney"
+    },
+    "2": {
+      "id": 2,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "3": {
+      "id": 3,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "4": {
+      "id": 4,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "5": {
+      "id": 5,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "6": {
+      "id": 6,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "7": {
+      "id": 7,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "8": {
+      "id": 8,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "9": {
+      "id": 9,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
     }
   },
   "fitness": {
-    "one": {
+    "1": {
       "id": 1,
       "title": "6 Tips for buying runnings shoes",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fitness_1.jpg?alt=media&token=9fa52cd4-7224-4bee-aad8-8d9f14d3087d",
-      "description": "To make sure your shoes can go the distance without hurting your body, Fullem suggests these tips to keep in mind.\n 1. Shop at Smaller Stores\n Major department chains can’t always answer your specific needs, so look for smaller specialty stores like Nike or your local running store. These shops have a knowledgeable staff to help you pick the right shoes for your running routine, says Fullem.\n 2. Think About the Length and Width\n Your feet need some breathing room as you run, so get a size that’s half an inch longer than what you normally wear. If running shoes tend to irritate the sides of your feet, then try a different width—brands like New Balance come in a wide range of widths, says Fullem.\n 3.Give Them a Test Run.\n Just like you wouldn’t buy a car without taking it for a spin, the same goes for running shoes. Ask a store clerk if you can take a lap around the store or step outside for a test run, says Fullem. It’s the only way you’ll truly know if a shoe works for you.\n 4. Buy Extras\n When new shoe models comes out every few months, it can be a huge pain to go through the hunt again. Fullem recommends buying more than one pair at a time. This way you’ll know exactly what shoe works for your body. You can also wait to stock up until the next model comes out, because the pair you have might be on sale at that point.\n 5. Don’t Assume Your Size\n Always re-measure your foot and try on a shoe because no two shoes will fit you the same way, says Fullem. Your size 7 Pumas might fit perfectly, but you might be a 7.5 in Reebok.\n 6. Don’t Believe Gimmicks\n If this study proves anything, it’s that “special features” in shoes don’t necessarily lead to better, injury-free performances, says Fullem. Unless a doctor recommends something like gel inserts, stick with the basic—and affordable—option.\n If you’re looking for shoes for different kinds of workouts, check out our shoe finder!",
+      "description": "To make sure your shoes can go the distance without hurting your body, Fullem suggests these tips to keep in mind.\n 1. Shop at Smaller Stores\n Major department chains can’t always answer your specific needs, so look for smaller specialty stores like Nike or your local running store. These shops have a knowledgeable staff to help you pick the right shoes for your running routine, says Fullem.\n 2. Think About the Length and Width\n Your feet need some breathing room as you run, so get a size that’s half an inch longer than what you normally wear. If running shoes tend to irritate the sides of your feet, then try a different width—brands like New Balance come in a wide range of widths, says Fullem.\n 3.Give Them a Test Run.\n Just like you wouldn’t buy a car without taking it for a spin, the same goes for running shoes. Ask a store clerk if you can take a lap around the store or step outside for a test run, says Fullem. It’s the only way you’ll truly know if a shoe works for you.\n 4. Buy Extras\n When new shoe models comes out every few months, it can be a huge pain to go through the hunt again. Fullem recommends buying more than one pair at a time. This way you’ll know exactly what shoe works for your body. You can also wait to stock up until the next model comes out, because the pair you have might be on sale at that point.\n 5. Don’t Assume Your Size\n Always re-measure your foot and try on a shoe because no two shoes will fit you the same way, says Fullem. Your size 7 Pumas might fit perfectly, but you might be a 7.5 in Reebok.\n 6. Don’t Believe Gimmicks\n If this study proves anything, it’s that special features in shoes don’t necessarily lead to better, injury-free performances, says Fullem. Unless a doctor recommends something like gel inserts, stick with the basic—and affordable—option.\n If you’re looking for shoes for different kinds of workouts, check out our shoe finder!",
       "date": "2017-09-09",
       "hashtag": "#running #shoes"
     },
-    "two": {
-      "id": 1,
-      "title": "6 Tips for buying runnings shoes",
-      "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fitness_1.jpg?alt=media&token=9fa52cd4-7224-4bee-aad8-8d9f14d3087d",
-      "description": "To make sure your shoes can go the distance without hurting your body, Fullem suggests these tips to keep in mind.\n 1. Shop at Smaller Stores\n Major department chains can’t always answer your specific needs, so look for smaller specialty stores like Nike or your local running store. These shops have a knowledgeable staff to help you pick the right shoes for your running routine, says Fullem.\n 2. Think About the Length and Width\n Your feet need some breathing room as you run, so get a size that’s half an inch longer than what you normally wear. If running shoes tend to irritate the sides of your feet, then try a different width—brands like New Balance come in a wide range of widths, says Fullem.\n 3.Give Them a Test Run.\n Just like you wouldn’t buy a car without taking it for a spin, the same goes for running shoes. Ask a store clerk if you can take a lap around the store or step outside for a test run, says Fullem. It’s the only way you’ll truly know if a shoe works for you.\n 4. Buy Extras\n When new shoe models comes out every few months, it can be a huge pain to go through the hunt again. Fullem recommends buying more than one pair at a time. This way you’ll know exactly what shoe works for your body. You can also wait to stock up until the next model comes out, because the pair you have might be on sale at that point.\n 5. Don’t Assume Your Size\n Always re-measure your foot and try on a shoe because no two shoes will fit you the same way, says Fullem. Your size 7 Pumas might fit perfectly, but you might be a 7.5 in Reebok.\n 6. Don’t Believe Gimmicks\n If this study proves anything, it’s that “special features” in shoes don’t necessarily lead to better, injury-free performances, says Fullem. Unless a doctor recommends something like gel inserts, stick with the basic—and affordable—option.\n If you’re looking for shoes for different kinds of workouts, check out our shoe finder!",
-      "date": "2017-09-09",
-      "hashtag": "#running #shoes"
+    "2": {
+      "id": 2,
+      "title": "This 3-Move Workout For a Stronger Body Only Takes 15 Minutes",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fitness_2.jpg?alt=media&token=61133584-c0c9-43cf-bed7-5a26ff4e6d4c",
+      "description": "Trying to figure out what you should do for your next workout is as challenging as figuring out when you're even going to find the time to exercise. With this workout, there's no research required, and it only takes 15 minutes. As busy as we get, we can always find time for an episode of Scandal, and those commercials alone are much longer than this workout.\n This workout isn't just time efficient; it's also effective. By the end of the workout, you'll have worked your entire body while also getting your heart rate up. To put together this workout, we enlisted the help of Youfit Health Club's National Director of Fitness, Raphael Konforti. 'While it's pretty quick, you'll be working the majority of the time. By doing this circuit, you'll spend as much time exercising as some people do in 30 minutes,' Konforti told us.\n Directions: Do each exercise for a total of 45 seconds before moving on to the next exercise. Do not take breaks between each move. After completing all three exercises, rest for 45 seconds. Repeat for five rounds.\n 1. Deadlift\n 2. Squat\n 3. Push-Up\n Keep reading for more details and tips on each exercise.",
+      "date": "2017-09-08",
+      "hashtag": "#fitness #workouts #strength"
+    },
+    "3": {
+      "id": 3,
+      "title": "8 Yoga Poses for a Strong Core",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fitness_3.jpg?alt=media&token=6263968f-815d-4a12-b901-12ed6a4573c4",
+      "description": "Yoga is an excellent way to strengthen your abdominals. Most yoga workouts ask you to keep your core muscles actively engaged throughout the routine. Holding your abs in gives you stability and improves your posture. Using yoga for abs is a great way to get that lean, strong for look.\n These 10 poses are great for engaging your core muscles. You can integrate them into your current yoga workout, or turn them into a new routine by holding each pose for about 30 seconds.\n 1. Boat Pose,\n 2. Plank Pose,\n 3. Dolphin Plank Pose,\n 4. Side Plank Pose,\n 5. Extended Side Angle Pose,\n 6. Half Moon Pose,\n 7. Upward Facing Dog Pose,\n 8. Warrior I Pose.s",
+      "date": "2017-09-10",
+      "hashtag": "#yoga #core #fitness"
+    },
+    "4": {
+      "id": 4,
+      "title": "Your fall fitness workout",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fitness_4.jpg?alt=media&token=c4ce6eaf-447f-4eed-9a6f-aa3146442215",
+      "description": "It can be really hard to swap the easy-going vibes of summer—one day you’re picking peaches, the next you’re shibori dying your sheets (possibly squeezing in a beach or pool workout in between)—for the more structured schedule September typically brings. But there are some serious benefits to be had by starting new routines right now—be it beauty, diet, or exercise. Not least of all that they’re the perfect cure for a bad case of the summer scaries—AKA TFW you realize you have to start going back into the office on Fridays.\n Thankfully, when it comes to refreshing your workout plan, Tone It Up founders Karena Dawn and Katrina Scott are here to help. The duo’s known for hosting quarterly reset challenges with their ginormous online fitfam and are in the midst of bringing their cult sculpt sessions to the masses IRL. (Their roving TIU fitness festival launches in Washington, DC on Sept. 7, with plans to stop in 15 cities—from Boston to Nashville, Dallas, Philadelphia, Tampa, San Francisco, Chicago, and more—by October 7.) And just in case you can’t meet up with Dawn and Scott on tour, the twosome’s sharing their go-to exercises for a fall reboot with Well+Good.\n Broken up into upper-body and lower-body moves, their circuit’s designed to be done anywhere—though they recommend adding it to your at-home exercise plan. Why? “Indoor routines are perfect for high intensity interval training because you can tone your total body while [elevating] your heart rate and metabolism—all in the comfort of your home,” says Dawn. Plus, it’s much easier to DIY a post-workout turmeric latte when your kitchens only a couple feet away.",
+      "date": "2017-09-06",
+      "hashtag": "#fitness #workouts"
+    },
+    "5": {
+      "id": 5,
+      "title": "Runners, Here's How to Stay Safe and Fit on Your Next Vacation",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fitness_5.jpg?alt=media&token=6d3077f9-224f-4b8d-9efe-e87907243ad0",
+      "description": "Whether you're traveling for work or pleasure, you can take advantage of new scenery and get your run in while on the road. To stay safe while you run in an unfamiliar location, pay attention to the hazards and climate and follow these tips.\n 1. Scope out your route. While driving or riding around town, take a look around and really take the time to observe the route you're considering for your next run. Is the route well-lit? Is the area heavily trafficked? Are there any geographical dangers you'd need to navigate while on foot? Knowing what to expect is key to avoiding dangerous situations in an unfamiliar area.\n 2. Choose peak running hours. Even if you love the alone time you get with a late-night run in your hometown, choose peak hours when running in a new place. Wait for the sun to rise, when you know plenty of other people will be on the streets.\n 3. Know your route. You've already scoped out the area you think is the most scenic and safest for your next run, but before you head out, make sure you also really understand your route. Taking the time to chart your path, knowing where the crucial turns or turnarounds are to make it back to your hotel safely, will save you energy and frustration during your run.\n 4. Run unplugged, but be smart about it. Keep your eyes and ears open for traffic and people while you run through a new route, but do take your phone with you. If you're injured, lost, or feel unsafe, your phone is your safety net to calling a friend, getting an Uber, or consulting a map.\n 5. Bring your ID and cash. Also take your ID and cash with you to get safely into a cab or to identify yourself to police officers with in case of an emergency. Plan ahead so you have the pockets or belt you need to carry the additional emergency gear while you're traveling.\n 6. Eyes up. The best part of running in a new location is taking advantage of new and exciting scenery on your route. Whether it's the beach or the mountains, though, remember to keep your eyes up and focused on the traffic and people around you while you run. The scenery may provide a great distraction and make a long run more enjoyable, but stay alert to any hidden dangers in your path.\n 7. Don't be a hero. If you feel unsafe, trust your gut instead of powering through. If at any time during your run you feel unsafe, you have no obligation to be polite or a superhero. Hail a cab, turn around, and just get home.\n 8. Check in with colleagues, family, or friends you're traveling with. If you're traveling with others, this is not the time to be the superindependent woman who doesn't tell anyone where she's going or when she'll return. Let your travel partners know when you're leaving, the route you plan to run, and when you expect to return so someone will know if you've run into trouble.",
+      "date": "2017-09-08",
+      "hashtag": "#fitness #running #tips"
+    },
+    "6": {
+      "id": 6,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "7": {
+      "id": 7,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "8": {
+      "id": 8,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "9": {
+      "id": 9,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
     }
   },
   "beauty": {
-    "one": {
+    "1": {
       "id": 1,
       "title": "Sephora Holiday 2017",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/beauty_1.jpg?alt=media&token=21c11c6f-b061-4715-9dd8-c4f7b87cbc85",
       "description": "Shine a light on beautiful skin with glow-getter creams, powders, and liquids—for a subtle radiance, intense glow, or anything in between. This set includes seven deluxe everyday essentials. Available at Sephora.\n 0.085 oz/ 2.4 g BECCA Shimmering Skin Perfector® Pressed in Moonstone\n 0.33 oz/ 10 mL Benefit Cosmetics High Beam\n 0.14 oz/ 4 g Bobbi Brown Mini Shimmer Brick in Bronze\n 0.095 oz/ 2.8 mL Cover FX Custom Enhancer Drops in Moonlight\n 0.06 oz/ 1.7 g NUDESTIX Nudies All Over Face Color in Illumi-naughty\n 0.21 oz/ 6 g Milk Makeup Highlighter in Lit\n 0.07 oz/ 2.2 g tarte Amazonian Clay 12-Hour Highlighter in Exposed",
       "date": "2017-09-09",
       "hashtag": "#beauty #makeup #sephora"
+    },
+    "2": {
+      "id": 2,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "3": {
+      "id": 3,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "4": {
+      "id": 4,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "5": {
+      "id": 5,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "6": {
+      "id": 6,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "7": {
+      "id": 7,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "8": {
+      "id": 8,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
+    },
+    "9": {
+      "id": 9,
+      "title": "",
+      "image_url": "",
+      "description": "",
+      "date": "",
+      "hashtag": ""
     }
   }
 }
