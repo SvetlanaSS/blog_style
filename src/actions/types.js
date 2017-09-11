@@ -7,3 +7,7 @@ export const USER_LOGGED_OUT = 'USER_LOGGED_OUT';
 // Loader
 export const SHOW_LOADER = 'SHOW_LOADER';
 export const HIDE_LOADER = 'HIDE_LOADER';
+
+// UI Modal BlogPost
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const HIDE_MODAL = 'HIDE_MODAL';
