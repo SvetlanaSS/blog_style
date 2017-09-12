@@ -11,3 +11,7 @@ export const HIDE_LOADER = 'HIDE_LOADER';
 // UI Modal BlogPost
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const HIDE_MODAL = 'HIDE_MODAL';
+
+// Firebase database
+export const FETCH_DATA_FROM_FIREBASE_SUCCESS = 'FETCH_DATA_FROM_FIREBASE_SUCCESS';
+export const FETCH_DATA_FROM_FIREBASE_ERROR = 'FETCH_DATA_FROM_FIREBASE_ERROR';
