@@ -10,10 +10,11 @@ Hur redux fungerar i min applikation:
 I redusers-mappen ställs villkoren för hur applicationen ska fungera. I actions-mappen finns actions eller stegen som utförs när programmet körs.
 
 En navigation mellan menyalternativ görs med hjälp av react-router.
+Allt innehålet för alla menyalternativ hämtas från databasen en gång och sedan visas ett visst innehåll för det valda menyalternativet.
 
 Vad man kan göra på applikationen:
 * logga in med email (test user: login: admin@gmail.com, lösenord: admin123),
 * logga in med Facebook,
 * det finns loader på login-sidan när man loggar in,
-* det finns olika posts beroende av navigations meny,
+* man kan navigera mellan olika menyalternativ och beroende på det valda menyalternativet visas ett visst innehåll,
 * man kan klicka på posttiteln, då öppnas inlägget i ett nytt modalfönster,
