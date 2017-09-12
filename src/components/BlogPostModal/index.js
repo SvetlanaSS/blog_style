@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Thumbnail } from 'react-bootstrap';
 import { hideModal } from '../../actions/modal';
 
 class BlogPostModal extends Component {
@@ -13,6 +13,7 @@ class BlogPostModal extends Component {
           <Modal.Title id="contained-modal-title-lg">{post.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <Thumbnail src={post.image_url} alt="foto" style={{width: '242px', heigth: '200px', margin: '0 auto'}} />
           <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
           <p>{post.description}</p>
           <p style={{color: 'grey'}}>{post.hashtag}</p>
