@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchDataFirebase } from '../../actions/firebaseContent';
 import BlogPost from '../BlogPost';
 import { Grid, Row } from 'react-bootstrap';
+import Search from '../Search';
 
 class Page extends Component {
 
@@ -43,6 +44,7 @@ class Page extends Component {
     }
     return (
       <Grid>
+        <Search />
         {this.renderPosts(data)}
       </Grid>
     );

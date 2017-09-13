@@ -19,3 +19,10 @@ Vad man kan göra på applikationen:
 * Det finns loader på login-sidan när man loggar in,
 * Man kan navigera mellan olika menyalternativ och beroende på det valda menyalternativet visas ett visst innehåll,
 * Man kan klicka på posttiteln, då öppnas inlägget i ett nytt modalfönster,
+
+Vilka teknologier används i appen:
+* create-react-app,
+* react-redux,
+* firebase som databasen,
+* react-router,
+* styled-components,

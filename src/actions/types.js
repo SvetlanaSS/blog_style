@@ -9,8 +9,8 @@ export const SHOW_LOADER = 'SHOW_LOADER';
 export const HIDE_LOADER = 'HIDE_LOADER';
 
 // UI Modal BlogPost
-export const SHOW_MODAL = 'SHOW_MODAL';
-export const HIDE_MODAL = 'HIDE_MODAL';
+export const SHOW_MODAL_POST = 'SHOW_MODAL_POST';
+export const HIDE_MODAL_POST = 'HIDE_MODAL_POST';
 
 // Firebase database
 export const FETCH_DATA_FROM_FIREBASE_SUCCESS = 'FETCH_DATA_FROM_FIREBASE_SUCCESS';

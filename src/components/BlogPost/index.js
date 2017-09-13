@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { showModal } from '../../actions/modal';
+import { showModalPost } from '../../actions/modalPost';
 import { Col, Thumbnail, Button } from 'react-bootstrap';
 
 class BlogPost extends Component {
 
   render() {
-    const { post, showModal } = this.props;
+    const { post, showModalPost } = this.props;
     const thumbnailInstance = (
       <Col xs={12} sm={6} md={3} >
         <Thumbnail src={post.image_url} alt="foto" style={{width: '242px', heigth: '200px', minHeight: '470px', maxHeight: '470px'}}>
-          <h4><a style={{color: 'black', cursor: 'pointer'}} onClick={() => showModal(post)}>{post.title}</a></h4>
+          <h4><a style={{color: 'black', cursor: 'pointer'}} onClick={() => showModalPost(post)}>{post.title}</a></h4>
           <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
           <p>{post.description.slice(0, 130) + '...'}</p>
           <p style={{color: 'grey'}}>{post.hashtag}</p>
@@ -31,7 +31,7 @@ class BlogPost extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ showModal }, dispatch);
+  return bindActionCreators({ showModalPost }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(BlogPost);
