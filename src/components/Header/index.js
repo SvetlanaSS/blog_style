@@ -20,11 +20,19 @@ class Header extends Component {
       margin-top: 0.50rem;
     `;
 
+    const Search = styled.span`
+      display: inline-block;
+      float: right;
+    `;
+
+    const { authenticated } = this.props;
+
     return (
       <HeaderWrapper>
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
+        { authenticated && <Search>Icon</Search> }
       </HeaderWrapper>);
   }
 }

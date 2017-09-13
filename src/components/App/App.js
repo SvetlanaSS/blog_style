@@ -12,9 +12,9 @@ class App extends Component {
     const { authenticated } = this.props;
     return (
       <div>
-        <Header/>
-        { !authenticated ? <Menu /> : null }
-        { !authenticated ? this.props.children : <LoginWindow/> }
+        <Header authenticated={ authenticated } />
+        { authenticated ? <Menu /> : null }
+        { authenticated ? this.props.children : <LoginWindow/> }
         <Loader />
         <BlogPostModal />
         <Footer/>
