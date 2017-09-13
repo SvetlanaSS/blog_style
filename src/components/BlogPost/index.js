@@ -10,7 +10,7 @@ class BlogPost extends Component {
     const { post, showModal } = this.props;
     const thumbnailInstance = (
       <Col xs={12} sm={6} md={3} >
-        <Thumbnail src={post.image_url} alt="foto" style={{width: '242px', heigth: '200px', minHeight: '450px', maxHeight: '450px'}}>
+        <Thumbnail src={post.image_url} alt="foto" style={{width: '242px', heigth: '200px', minHeight: '470px', maxHeight: '470px'}}>
           <h4><a style={{color: 'black', cursor: 'pointer'}} onClick={() => showModal(post)}>{post.title}</a></h4>
           <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
           <p>{post.description.slice(0, 130) + '...'}</p>
