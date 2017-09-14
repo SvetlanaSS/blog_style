@@ -7,6 +7,8 @@ import Search from '../Search';
 
 class Header extends Component {
   render() {
+    const { authenticated } = this.props;
+
     const HeaderWrapper = styled.div`
       background: #FCFBFB;
       height: 5rem;
@@ -23,20 +25,18 @@ class Header extends Component {
       margin-top: 0.50rem;
     `;
 
-    const StyledSearch = styled(Search)`
+    const IconContainer = styled.span`
       display: inline-block;
       float: right;
-      padding-top: 0.4rem;
+      padding: .4rem 1rem;
     `;
-
-    const { authenticated } = this.props;
 
     return (
       <HeaderWrapper>
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
-        { authenticated && <FaSearch size={25} /> }
+        { authenticated && <IconContainer><FaSearch onClick={() => console.log(111)} size={25} /></IconContainer> }
       </HeaderWrapper>);
   }
 }
