@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import FaSearch from 'react-icons/lib/fa/search';
 import logo from './logo.png';
-import Search from '../Search';
 
 class Header extends Component {
   render() {
