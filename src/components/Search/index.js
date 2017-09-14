@@ -35,11 +35,12 @@ class Search extends Component {
         <Collapse in={showSearch}>
           <div>
             <Panel>
-              <div style={{display: 'inline'}}>
+              <div style={{display: 'inline-block'}}>
                 <SearchByToday />
                 <SearchByMestLikes />
+                <SearchByHashtag />
+                <button>Search</button>
               </div>
-              <SearchByHashtag />
             </Panel>
           </div>
         </Collapse>
