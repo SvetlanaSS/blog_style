@@ -6,7 +6,7 @@ import logo from './logo.png';
 
 class Header extends Component {
   render() {
-    const { authenticated } = this.props;
+    const { authenticated, showModalSearch } = this.props;
 
     const HeaderWrapper = styled.div`
       background: #FCFBFB;
@@ -35,7 +35,7 @@ class Header extends Component {
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
-        { authenticated && <IconContainer><FaSearch onClick={() => console.log(111)} size={25} /></IconContainer> }
+        { authenticated && <IconContainer><FaSearch onClick={() => showModalSearch()} size={25} /></IconContainer> }
       </HeaderWrapper>);
   }
 }
