@@ -35,7 +35,7 @@ class Header extends Component {
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
-        { authenticated && <IconContainer><FaSearch onClick={() => showModalSearch()} size={25} /></IconContainer> }
+        { authenticated && <IconContainer><FaSearch onClick={() => showModalSearch()} size={25} style={{color: '#635F5F'}} /></IconContainer> }
       </HeaderWrapper>);
   }
 }
