@@ -27,6 +27,12 @@ export function signInUser(email, password) {
   };
 }
 
+export function userLoggedIn() {
+  return {
+    type: USER_AUTHORIZED
+  };
+}
+
 export function signOutUser() {
   return dispatch => {
     dispatch({ type: USER_LOGGED_OUT });
