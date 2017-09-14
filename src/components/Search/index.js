@@ -29,7 +29,7 @@ class Search extends Component {
   render() {
     const { showSearch } = this.state;
     const wellStyles = {maxWidth: 400, margin: '0 auto 1rem'};
-    const buttonsInstance = (
+    return (
       <div style={wellStyles}>
         <FaSearch size={25} onClick={()=> this.toggleSearch()} />
         <Collapse in={showSearch}>
@@ -44,11 +44,6 @@ class Search extends Component {
             </Panel>
           </div>
         </Collapse>
-      </div>
-    );
-    return (
-      <div>
-        {buttonsInstance}
       </div>
     );
   }
