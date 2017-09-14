@@ -26,7 +26,7 @@ class Search extends Component {
                   </Checkbox>
                   {' '}
                   <Checkbox inline>
-                    Mest likes posts
+                    Most liked posts
                   </Checkbox>
                   {' '}
                 </FormGroup>
