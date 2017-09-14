@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import FaSearch from 'react-icons/lib/fa/search';
 import logo from './logo.png';
 import Search from '../Search';
 
@@ -22,11 +23,11 @@ class Header extends Component {
       margin-top: 0.50rem;
     `;
 
-    // const Search = styled.span`
-    //   display: inline-block;
-    //   float: right;
-    //   padding-top: 0.4rem;
-    // `;
+    const StyledSearch = styled(Search)`
+      display: inline-block;
+      float: right;
+      padding-top: 0.4rem;
+    `;
 
     const { authenticated } = this.props;
 
@@ -35,7 +36,7 @@ class Header extends Component {
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
-        { authenticated && <Search style={{display: 'inline-block', float: 'right', paddingTop: '0.4rem'}} /> }
+        { authenticated && <FaSearch size={25} /> }
       </HeaderWrapper>);
   }
 }
