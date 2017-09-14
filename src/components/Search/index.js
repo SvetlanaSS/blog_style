@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { showModalSearch } from '../../actions/modalSearch';
-import { Well, Collapse } from 'react-bootstrap';
+import { Panel, Collapse } from 'react-bootstrap';
 import FaSearch from 'react-icons/lib/fa/search';
+import SearchByToday from './searchByToday';
+import SearchByHashtag from './searchByHashtag';
+import SearchByMestLikes from './searchByMestLikes';
 
 
 class Search extends Component {
@@ -31,10 +34,13 @@ class Search extends Component {
         <FaSearch size={25} onClick={()=> this.toggleSearch()} />
         <Collapse in={showSearch}>
           <div>
-            <Well>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            </Well>
+            <Panel>
+              <div style={{display: 'inline'}}>
+                <SearchByToday />
+                <SearchByMestLikes />
+              </div>
+              <SearchByHashtag />
+            </Panel>
           </div>
         </Collapse>
       </div>
