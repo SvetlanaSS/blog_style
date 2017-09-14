@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { showModalSearch } from '../../actions/modalSearch';
-import { Button, Well, Collapse } from 'react-bootstrap';
+import { Well, Collapse } from 'react-bootstrap';
+import FaSearch from 'react-icons/lib/fa/search';
 
 
 class Search extends Component {
@@ -27,11 +28,7 @@ class Search extends Component {
     const wellStyles = {maxWidth: 400, margin: '0 auto 1rem'};
     const buttonsInstance = (
       <div style={wellStyles}>
-        <Button
-          bsSize="large"
-          block
-          onClick={()=> this.toggleSearch()}
-        >Click here for search and filter</Button>
+        <FaSearch size={25} onClick={()=> this.toggleSearch()} />
         <Collapse in={showSearch}>
           <div>
             <Well>
