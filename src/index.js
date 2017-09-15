@@ -8,13 +8,15 @@ import App from './components/App/App.js';
 import Page from './components/Page';
 import registerServiceWorker from './registerServiceWorker';
 import { hasLocalStorageUser } from './helpers';
-import { userLoggedIn } from './actions/auth';
+import { userLoggedIn, userLoggedOut } from './actions/auth';
 
 const store = reduxStore();
 
 const localStorageUser = hasLocalStorageUser();
 if (localStorageUser) {
   store.dispatch(userLoggedIn());
+} else {
+  store.dispatch(userLoggedOut());
 }
 
 

@@ -8,18 +8,20 @@ import Loader from '../Loader';
 import Menu from '../Menu';
 import BlogPostModal from '../BlogPostModal';
 import { showModalSearch } from '../../actions/modalSearch';
+import Logout from '../AuthorisationForm';
 
 class App extends Component {
   render() {
     const { authenticated, showModalSearch } = this.props;
     return (
       <div>
-        <Header authenticated={ authenticated } showModalSearch={showModalSearch}/>
+        <Header authenticated={ authenticated } showModalSearch={showModalSearch} />
         { authenticated ? <Menu /> : null }
-        { authenticated ? this.props.children : <LoginWindow/> }
+        { authenticated ? this.props.children : <LoginWindow /> }
         <Loader />
         <BlogPostModal />
-        <Footer/>
+        <Footer />
+        { authenticated ? <Logout /> : null}
       </div>
     );
   }

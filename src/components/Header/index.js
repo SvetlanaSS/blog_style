@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import FaSearch from 'react-icons/lib/fa/search';
 import logo from './logo.png';
+import { signOutUser } from '../../actions/auth';
 
 class Header extends Component {
   render() {
-    const { authenticated, showModalSearch } = this.props;
+    const { authenticated, showModalSearch, signOutUser } = this.props;
 
     const HeaderWrapper = styled.div`
       background: #FCFBFB;
@@ -30,14 +34,31 @@ class Header extends Component {
       padding: .4rem 1rem;
     `;
 
+    const ButtonContainer = styled.span`
+      display: inline-block;
+      float: right;
+      padding: 0.1rem 1rem;
+    `;
+
     return (
       <HeaderWrapper>
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
+        { authenticated && <ButtonContainer><Button onClick={() => signOutUser()}>Logout</Button></ButtonContainer> }
         { authenticated && <IconContainer><FaSearch onClick={() => showModalSearch()} size={25} style={{color: '#635F5F'}} /></IconContainer> }
       </HeaderWrapper>);
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.authenticated,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ signOutUser }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -39,3 +39,9 @@ export function signOutUser() {
     return firebase.auth().signOut();
   };
 }
+
+export function userLoggedOut() {
+  return {
+    type: USER_LOGGED_OUT
+  };
+}
