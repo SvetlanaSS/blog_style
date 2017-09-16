@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Header from '../Header';
 import Footer from '../Footer';
-import LoginWindow from '../AuthorisationForm';
+import AuthorisationForm from '../AuthorisationForm';
 import Loader from '../Loader';
 import Menu from '../Menu';
 import BlogPostModal from '../BlogPostModal';
@@ -16,7 +16,7 @@ class App extends Component {
       <div>
         <Header authenticated={ authenticated } showModalSearch={showModalSearch} />
         { authenticated ? <Menu /> : null }
-        { authenticated ? this.props.children : <LoginWindow /> }
+        { authenticated ? this.props.children : <AuthorisationForm /> }
         <Loader />
         <BlogPostModal />
         <Footer />

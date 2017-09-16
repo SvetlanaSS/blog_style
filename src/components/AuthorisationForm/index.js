@@ -4,7 +4,7 @@ import FacebookAuthorisation from './FacebookAuthorisation';
 import LoginForm from './LoginForm';
 import Loader from '../Loader';
 
-class LoginWindow extends Component {
+class AuthorisationForm extends Component {
   render() {
     const WindowForm = styled.div`
       width: 100%;
@@ -39,4 +39,4 @@ class LoginWindow extends Component {
   }
 }
 
-export default LoginWindow;
+export default AuthorisationForm;
