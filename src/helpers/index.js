@@ -7,3 +7,14 @@ export function hasLocalStorageUser() {
   }
   return localStorageUser;
 }
+
+export function readEmailFromLocalStorage() {
+  let email;
+  for (const key in localStorage) {
+    if (key.startsWith('firebase:authUser:')) {
+      const data = JSON.parse(localStorage.getItem(key));
+      return data.email;
+    }
+  }
+  return email;
+}
