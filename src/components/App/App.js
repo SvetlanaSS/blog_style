@@ -8,7 +8,6 @@ import Loader from '../Loader';
 import Menu from '../Menu';
 import BlogPostModal from '../BlogPostModal';
 import { showModalSearch } from '../../actions/modalSearch';
-import Logout from '../AuthorisationForm';
 
 class App extends Component {
   render() {
@@ -21,7 +20,6 @@ class App extends Component {
         <Loader />
         <BlogPostModal />
         <Footer />
-        { authenticated ? <Logout /> : null}
       </div>
     );
   }

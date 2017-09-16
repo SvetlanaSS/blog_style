@@ -8,17 +8,14 @@ import App from './components/App/App.js';
 import Page from './components/Page';
 import registerServiceWorker from './registerServiceWorker';
 import { hasLocalStorageUser } from './helpers';
-import { userLoggedIn, userLoggedOut } from './actions/auth';
+import { userLoggedIn } from './actions/auth';
 
 const store = reduxStore();
 
 const localStorageUser = hasLocalStorageUser();
 if (localStorageUser) {
   store.dispatch(userLoggedIn());
-} else {
-  store.dispatch(userLoggedOut());
 }
-
 
 ReactDOM.render(
   <Provider store={store}>
@@ -29,7 +26,6 @@ ReactDOM.render(
           <Route path="/fashion" component={Page} />
           <Route path="/fitness" component={Page} />
           <Route path="/beauty" component={Page} />
-          {/* <Route path="/lifestyle" component={Page} /> */}
         </App>
       </Switch>
     </Router>
@@ -37,7 +33,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 registerServiceWorker();
-
 
 if (module.hot) {
   module.hot.accept(Provider, () => {
