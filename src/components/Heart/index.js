@@ -25,9 +25,14 @@ class Heart extends Component {
   }
 
   DisLikePost = (postId) => {
-    firebase.database().ref(`/fashion/${postId}/likes`).once('value').then(snapshot => {
-      console.log(snapshot.val());
+    const { forceFetchDataFirebase, likesList } = this.props;
+    const currentUserEmail = readEmailFromLocalStorage();
+    let likeKey;
+    Object.keys(likesList).find(key => {
+      return (likesList[key].email === currentUserEmail) ? likeKey = key : null;
     });
+    firebase.database().ref(`/fashion/${postId}/likes/${likeKey}`).remove();
+    forceFetchDataFirebase();
   }
 
   render() {

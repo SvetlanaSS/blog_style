@@ -19,7 +19,7 @@ class BlogPost extends Component {
             <p style={{color: 'grey'}}>{post.hashtag}</p>
             <p style={{color: 'grey'}}>{Object.keys(post.likes).length} Likes</p>
             <hr/>
-            <Heart postLikes={likes} postId={post.id} forceFetchDataFirebase={forceFetchDataFirebase} />
+            <Heart postLikes={likes} postId={post.id} likesList={post.likes} forceFetchDataFirebase={forceFetchDataFirebase} />
           </Thumbnail>
         </Col>
       </div>
