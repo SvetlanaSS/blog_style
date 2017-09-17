@@ -1,104 +1,140 @@
 {
   "fashion": {
     "0": {
-      "id": 1,
+      "id": 0,
       "title": "How to be fashionable with no money",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_1.jpg?alt=media&token=32f8352b-ec7f-4d06-8f88-02063d66a35d",
       "description": "One of the biggest misconceptions that exists about fashion – and there are many – is that it requires money. No question, the fault for this lies with fashion writers because we tend to write mainly about big (read: expensive) brands. There are several reasons for this, none of which, incidentally, are the ones most people assume, namely, that fashion writers are idiots and think everyone out there spends their Saturday mornings at Louis Vuitton, or, alternatively, that fashion writers are basically a load of Mean Girls, here to make everyone else feel miserable about their un-bling lifestyle.\r Rather, the answer is far more prosaic, which is French for boring: fashion writers are quite lazy. Expensive brands have more money to send out press releases, hold shows, pay for advertising. Therefore, fashion writers are basically spoon-fed the information without having to go out and look for it. (Some fashion writers, of course, are obliged to write nice things about expensive brands because the brands advertise in their publication. Happily, that is not a problem here at the Guardian, where the only fashion I ever see regularly advertised is men’s slacks from the Guardian store. And jolly stylish they are too, I’d wager my Guardian store-bought hat on it.)\r And that, Gen Y, is the rub when it comes to fashionable cheap clothes: they require effort to find. Which is not to say that all expensive things are nice (to be honest, a lot of expensive stuff looks to me like it comes from Imelda Marcos’s garage sale), but it is at least more visible. Good cheap stuff requires some nosing out on your part.",
       "date": "2017-09-12",
       "hashtag": "#fashion #nomoney",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "svetlana.slyusareva@me.com"
+        },
+        "like2": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "1": {
-      "id": 2,
+      "id": 1,
       "title": "Tips to find the perfect tango shoes",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_2.jpg?alt=media&token=0f6b5230-c9ac-4939-9450-5c22be665f8d",
       "description": "You’ve had enough of ‘dance socks’ and you too want lethal stiletto heels. Of course, like all un-necessary things, tango shoes are in fact so useful. A beautiful pair of tango shoes will boost your confidence, help your posture and your balance. They’ll also reflect your personality and say even more about you as a tango dancer.\r The only thing to watch out: when you go out and try them out, you might forget all the advice below and simply buy the pair you fall in love with. And we’d say, falling in love with a pair of tango shoes is the best thing that can happen, so go ahead and buy them!\r What makes good tango shoes\r Here are a few tips:\r 1. Shoes come in different heel size, we would recommend to stay away from 9 cm. 7 cm is preferred; if not, 8cm is also good. Heels will help your posture but if they are too high, you’ll find it hard to keep your balance and it might put too much pressure on your calves.\r 2. In terms of material, you need something that looks nice while being sturdy.\r We don’t recommend suede; we found that it doesn’t stay nice for very long and it expands, which means that the shoes become loose, your feet are not held properly and it becomes hard to dance.\r Leather is good and usually long lasting.\r Silk and other materials can last quite long so don’t rule them out except if they look very fragile. Nathalie has a pair of polka dot silk shoes which she’s been wearing over and over and they still look pretty good.\r Patent leather is Nathalie’s favourite because shoes look beautiful forever – although shoes tend to stick to each other so you need to regularly apply vaseline or hand cream to make sure they don’t.\r 3. Make sure the back of the shoes (whether opened or closed, doesn’t make much of a difference) holds your feet well.\r 4. Avoid shoes with pompons, bows or stuff on the top or at the back because you will get your heel stuck, and it will get messy.\r Buying tango shoes: which brand?\r In terms of brands, the best brand is Comme il Faut (from Buenos Aires), they are very comfortable and very solid. They are high end shoes selling at about £150. You’ll have to buy them from the Internet however. Comme il Faut shoes are one size bigger than what you would usually buy, so if you usually wear 38, you’ll need to buy 37 in Comme Il Faut.\r We also recommend Mme Pivot from Italy (UK Facebook page and italian website), which are sold in London by Barbara. She can arrange a viewing if you contact her – tell her you are coming from us. Her contact is: Barbarina@gmail.com. The price is somewhat similar to Comme Il Faut, if not slightly less.\r Amy’s shop also stocks various brands at different price points – Turquoise, M. Tango. Have a look at the website for more information.\r Alternatively, we’ve been recommended Supadance, which we’ve never tried but which are much cheaper. Their latin sandals look fine as long as you go for ultra slim heels. Other brands include Nueva Epoqua and Freed.",
       "date": "2017-09-12",
       "hashtag": "#tips #fashion #shoes",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "svetlana.slyusareva@me.com"
+        },
+        "like2": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "2": {
-      "id": 3,
+      "id": 2,
       "title": "Here Are the Best Red Dresses in Fashion History",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_3.jpg?alt=media&token=ff73b1ef-163d-4f03-a0d2-e175179c6a7a",
       "description": "Red. Not only is it the biggest color this season, but it’s also one of the most classic shades that will never go out of style. It’s bold and loud, commanding attention while also conveying a sense of dynamism. And it seems that the most stylish women throughout history have understood the power of the punchy color.\r We did some digging to round up the very best red dresses in fashion history. On our list is everyone from Audrey Hepburn to Cindy Crawford to Michelle Obama. While there is a range of styles, we did find one common theme among the stylish women wearing the hue: They’re portraying an unshakeable self-confidence that red seems to bring out in anyone who wears it. Have you tried wearing the strong shade?\r Go on to see the best red dresses in fashion history, and then shop our favorite styles from Reformation, Mango, Stella McCartney, and more.",
       "date": "2017-09-12",
       "hashtag": "#dress #red",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "3": {
-      "id": 4,
+      "id": 3,
       "title": "10 Things to Know About Rihanna’s Fenty Puma",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_4.jpg?alt=media&token=87200787-ef64-41c8-9c0d-f8cba6dcdefa",
       "description": "Pink sparkling alien-planet piles of sand are meant to be poked, I am sorry. Rihanna wouldn’t have put them there (there being on the floor of the Park Avenue Armory’s venue for her Fenty Puma SS18) if she didn’t want people to give it a little ding dong on the old door bell, right?\r Apparently not! The piles of sands were a no-touch zone, which I learned the hard way.\r Here are 10 other important things I learned/stuff you should know about Rihanna’s Sunday night Fenty Puma NYFW showing.\r 1. Rihanna launched swim and it’s as though she realized one more of her great life’s purposes.\r Some of it’s wearable, some of it is terrifying, a lot of it is neon and if sold, all will sell.\r 2. Anything can be fishnet, really, even underwear or swim bottoms.\r Either way, I do believe that this is the solution the world needed to the whole “breathable” question.\r 3. If you didn’t begin to celebrate the 80s this summer with high-thigh-cut bathing suits, the late 80s/early 90s will be fully beachside venerated by 2018.\r The more neon, the more pubic region showing, the more radical the sunglasses to pair with your biker shorts and scrunchies, the better.\r 4. Speaking of, biker shorts!!!\r All of us need to stop what we are doing immediately in regards to athletic pants and find biker shorts in bright colors then match them to and wear them under super short, skirted athletic shorts.\r 5. I asked Shiona Turini what she thought the people needed to know about this show and she said Joan Smalls is still queen.\r 6. Rihanna is trying to make high-heeled flip flops a thing.\r If anyone can make them a thing it is Rihanna. (Raise your hand if she’s the one who got you to wear pool slides sans irony) The big difference here is that hers have surfboard leash-inspired ankle straps.\r 7. Visors, meanwhile, are 100% back in action from the depths of…\r IDK, their Sandals resort vacation and every retirement community golf club ever? Swear on my life: if you don’t already, you will want one. They have been all over fashion week, Leandra’s been talking about them since last summer and now, at Fenty Puma SS18, they appeared on models.\r 8. Ditto fanny packs.\r If you’re doing the Fenty Puma look, however, they have to be over-over-sized.\r 9. I learned that I never knew I needed a cropped reflective waterproof half-zip wind breaker quite so badly as I do right now.\r 10. Motocross is the new yoga!!!\r But please, don’t try any of those tricks at home. (Rihanna opened and closed the show with motorcycles zipping up one end of the Park Avenue Armory, flipping high as hell over the pink sand mounds and landing on the other end. I mean, the crowd was GASPING, and to shock a fashion crowd on a late Sunday night is tough.) Get your fix instead via the clothes, like wide-legged pants (that might remind you of 2006), bodysuits and parachute-strapped jackets.\r Although, by all means, if you want to show up to a party or work like this, you 100% should.",
       "date": "2017-09-11",
       "hashtag": "#fashion #rihanna",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "4": {
-      "id": 5,
+      "id": 4,
       "title": "Basic fall outfit",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_5.jpg?alt=media&token=7c6d05b3-d2c9-46c8-9679-0705a151b589",
       "description": "TOP: Free People (sized up to get the off the shoulder fit – comes in a few other colors!) | DEMIM: Lovers + Friends (they run small!) | BOOTIES: Jeffrey Campbell | HANDBAG: Chanel (‘Deauville’ in Large) | EARRINGS: Nannacay | NAILS are a dip!\r Free People is killing it with the easy, causal, everyday shirts/sweaters/cardigans for fall 2017! Their tops have been my jam lately – they are just comfortable and great to throw on with jeans and go! There’s just something about being a mom – I live for a good, comfortable outfit that still looks like I put forth effort, lol. Anyway, if you like great basics for fall – like oversized sweaters or off the shoulder tops- definitely check out the Free People selection.\r We are all missing Canada for sure but the weather in Tulsa has been SO nice. It is in the 50-60s every morning and doesn’t typically get hotter than 84 this week — we are used to 100 so 84 is not too bad. 🙂\r What are your plans for the weekend?!?! John is working of course but my mom is going to come into town and stay with Luke and me! I am anxious to see her – we have gotten spoiled by getting to see her almost weekly since Luke was born! PS. I am hoping to get Luke’s nursery shot over the weekend – I have had a lot of requests for that! I have also had a few people ask for a tutorial on how I cut my jeans – let me know if you all want a dedicated post on that or maybe just a Snapchat tutorial?!?",
       "date": "2017-09-11",
       "hashtag": "#outfit #basic",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "5": {
-      "id": 6,
+      "id": 5,
       "title": "2 ways to wear this season's hottest sweater trend",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_6.jpg?alt=media&token=b45b4995-e5b3-494e-b9b7-b9e589400c3f",
       "description": "I don’t know about Atlanta, but in New York City, sweater weather is in full swing, and during my NYFW stay, I fully embraced the cooler temperatures with some of my favorite knitwear pieces that I picked up before and during my trip! We all love a good sweater in the crisp Fall air, but some of my favorite ones come in the geometrical color block designs that I’ve seriously started to fall in love with.\r Color block sweaters can definitely have a tendency to look frumpy when they’re not done right… a little reminiscent of that ugly Christmas sweater you save your your company’s annual holiday party, if you will… but I think that pairing your sweater with the right accent pieces and accessories takes your knitwear game to the next level. I always love any excuse to pull out my vegan leather leggings, and now with Fall around the corner, my color block sweaters are the perfect excuse to do just that.",
       "date": "2017-09-10",
       "hashtag": "#fashion #outfit",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "6": {
-      "id": 7,
+      "id": 6,
       "title": "How to Transition Your Kimono's into the Fall Season",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_7.jpeg?alt=media&token=aa55d4a8-c4bb-4ed6-a94b-b9c4c1690be5",
       "description": "Greetings Lovelies!\r So, I was invited to a blogger shopping event at the Tanger Outlets in Atlantic City back in August. We were gifted a gift card and some other goodies and one of the items I snagged was this beautiful Kimono. Me and a Kimono...no longer a surprise to you guys. I love them. What I particularly love so much about this one is the beautiful colors that allow for this garment to transition so well into the upcoming Fall season.\r THE STYLING:\r I wanted to keep my look pretty neutral, so I went with these light grey skinny jeans, which I absolutely love by the way, The fit is perfection and they're so comfortable. Honestly, some of my most favorite pair of jeans are from Gap. They have been a consistent brand for me in quality and fit throughout the years. What's your go-to brand for great jeans?",
       "date": "2017-09-09",
       "hashtag": "#tips #fashion",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "7": {
-      "id": 8,
+      "id": 7,
       "title": "5 things that will transition any summer look to fall",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_8.jpg?alt=media&token=dcbf7423-8af6-433e-82e1-aa819b67f616",
       "description": "So it’s September, but I think the weather here in LA still thinks we’re in July! While I can’t think of anything I’d rather do than throw on a chic trench coat or a giant fuzzy sweater, I still wanted to find a way to incorporate Fall fashion from my Summer wardrobe. To be completely honest, if I wore this outfit out right now, I’d probably get a heatstroke… but with little elements in between (like the lips or bag), this look can totally be worn in the heat! Keep scrolling to discover 5 things that will transition any Summer look perfectly for Fall:\r 1. Dark Floral Dress\r One of the easiest ways to get yourself in an autumn state of mind is to change up your color palette. Incorporating darker colors and warm tones (as opposed to bright colors and pastel tones) into your wardrobe can easily shift your closet from summer to fall. This dark floral dress (similar here) is still warm-weather appropriate but the black, warm yellow and green colors give it a fall vibe!\r 2. Oversized Blazer\r I’ve said it once and I’ll say it again, an oversized blazer is going to be your closet staple this season. If you can stand to add another layer to your look (maybe if your office is an ice-box and you need a little warmth, or it gets cooler at night) then ditch your summer-worn blue jean jacket for an oversized blazer. The one I’m wearing here is from The Kooples but I’m also equally obsessed with this one and this one!\r 3. Thigh High Boots \r Every season I end up falling in love with a new pair of thigh high boots. Last year it was these and the year before I couldn’t stop wearing these! But this season, these thigh high Jimmy Choo boots are going to be my go-to’s. I love that they hug my legs and though they’re high-heels, they’re super comfortable! A good boot can instantly transform any look into the perfect fall look.\r 4. Structured Bag\r At this point, a structured bag is a classic. This one here has such a cool bucket-bag/pouch shape that makes a total statement! A new bag is like a new beginning. So treat yourself! If you’re looking to splurge- check this baby out. But if you’re on a budget, this one is super chic and under $100!\r 5. Dark Lips\r If it’s still WAY too hot out to rock a blazer or thigh-high boots, the easiest way to update your look for fall is to switch up your makeup! Dark lips anyone? A bold dark lip makes a huge statement and will never fail to add some edge to any look. If you can’t find a red/brown/fuchsia that fits you perfectly, try playing around and mixing shades! For this look, I’m wearing a deep scarlet, but I blended it with a darker brown to make a one of a kind hue.",
       "date": "2017-09-09",
       "hashtag": "#outfit #fashion",
-      "likes": [{ "email": "svetlana.slyusareva@me.com" }],
-      "likes_count": "1"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "8": {
-      "id": 9,
+      "id": 8,
       "title": "The Best Street Style From New York Fashion Week Spring 2018",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_9.jpeg?alt=media&token=9a0b7668-6b94-408d-ae51-389b238982ee",
       "description": "Another season of New York Fashion Week is upon us—Spring 2018, to be exact—and with that comes another season of epic street-style moments. Follow along this week as we bring you the standout looks from outside the shows: #WangSquad girls in black leather and new, Guido Palau-shorn ‘dos, European editors in five-inch heels and head-to-toe Gucci, bloggers in their sixth outfit of the day.\r MORE: 8 Designers to Watch at New York Fashion Week Spring 2018\r And, of course, there will be plenty of celebrity sightings, with Rihanna showing her latest Fenty collection; Kendall, Gigi, and Bella all making the rounds on the runway; and Kaia Gerber making her NYFW debut.\r Click through the gallery below to see all the best looks, and check back throughout the week—we’ll be updating as new photos roll in.",
       "date": "2017-09-08",
       "hashtag": "#looks #fashion",
-      "likes": "",
-      "likes_count": "0"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     },
     "9": {
-      "id": 10,
+      "id": 9,
       "title": "Keep It Classy",
       "image_url": "https://firebasestorage.googleapis.com/v0/b/blog-style-20507.appspot.com/o/fashion_10.JPG?alt=media&token=51003941-58cb-4aa5-a82b-59ec72610165",
       "description": "Hello lovelies. Happy Thursday to each of you. I hope this post finds you well and enjoying your day thus far. So, I had a ton of questions on this dress once I posted it to IG, so figured I would share a more detailed look of it here on the blog today. I have linked it below, as well my boots and a few other pieces, so make sure to check the links at the bottom of the post.\r This dress is fantastic. It really is. It is insanely comfortable, and I love the fit and fabric of it. The simple floral design and color scheme makes it easy to pair with multiple pairs of shoes, whether that be boots like I have done here, or a pair of flats, sandals, or even the right pair of heels. For this particular day, I had meetings and shoots to attend downtown, so this dress kept me looking and feeling good the entire afternoon and evening. The fabric is very lightweight and comfy, and as I have said about other pieces before....to me a great piece is one that has versatility and can be worn over and over again. And this dress has that ability. I will be wearing it again and again and again. Any who, we have a busy day ahead, but thank you all for following and I hope this answers some of the questions you may have had on the dress. Oh, how about the Land Rover Discovery interior?! Could it be prettier? I honestly don't know if it could. That is a discussion for another post. Thanks for following, make today an absolutely wonderful day! Love you all!",
       "date": "2017-09-05",
       "hashtag": "#dress #looks",
-      "likes": "",
-      "likes_count": "0"
+      "likes": {
+        "like1": {
+          "email": "john.dow@mail.com"
+        }
+      }
     }
   },
   "fitness": {

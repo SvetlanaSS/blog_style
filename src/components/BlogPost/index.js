@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { forceFetchDataFirebase } from '../../actions/firebaseContent';
 import Heart from '../Heart';
 import { showModalPost } from '../../actions/modalPost';
 import { Col, Thumbnail } from 'react-bootstrap';
 
 class BlogPost extends Component {
   render() {
-    const { post, showModalPost, post: { likes } } = this.props;
+    const { forceFetchDataFirebase, post, showModalPost, post: { likes } } = this.props;
     return (
       <div>
         <Col xs={12} sm={6} md={3} >
@@ -16,9 +17,9 @@ class BlogPost extends Component {
             <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
             <p>{post.description.slice(0, 130) + '...'}</p>
             <p style={{color: 'grey'}}>{post.hashtag}</p>
-            <p style={{color: 'grey'}}>{post.likes_count} Likes</p>
+            <p style={{color: 'grey'}}>{Object.keys(post.likes).length} Likes</p>
             <hr/>
-            <Heart postLikes={likes} />
+            <Heart postLikes={likes} postId={post.id} forceFetchDataFirebase={forceFetchDataFirebase} />
           </Thumbnail>
         </Col>
       </div>
@@ -27,7 +28,7 @@ class BlogPost extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ showModalPost }, dispatch);
+  return bindActionCreators({ showModalPost, forceFetchDataFirebase }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(BlogPost);
