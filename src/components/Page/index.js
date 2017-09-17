@@ -24,7 +24,7 @@ class Page extends Component {
         return (
           <Row key={key} className="show-grid">
             {obj[key].map(post => {
-              return <BlogPost key={post.id} post={post} />;
+              return <BlogPost key={post.id} post={post} {...this.props} />;
             })}
           </Row>
         );

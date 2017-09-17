@@ -17,21 +17,21 @@ class Heart extends Component {
   }
 
   LikePost = (postId) => {
-    const { forceFetchDataFirebase } = this.props;
+    const { forceFetchDataFirebase, route } = this.props;
     const currentUserEmail = readEmailFromLocalStorage();
     const like = { email: currentUserEmail };
-    firebase.database().ref(`/fashion/${postId}/likes`).push(like);
+    firebase.database().ref(`${route}/${postId}/likes`).push(like);
     forceFetchDataFirebase();
   }
 
   DisLikePost = (postId) => {
-    const { forceFetchDataFirebase, likesList } = this.props;
+    const { forceFetchDataFirebase, likesList, route } = this.props;
     const currentUserEmail = readEmailFromLocalStorage();
     let likeKey;
     Object.keys(likesList).find(key => {
       return (likesList[key].email === currentUserEmail) ? likeKey = key : null;
     });
-    firebase.database().ref(`/fashion/${postId}/likes/${likeKey}`).remove();
+    firebase.database().ref(`${route}/${postId}/likes/${likeKey}`).remove();
     forceFetchDataFirebase();
   }
 
@@ -52,6 +52,3 @@ class Heart extends Component {
 }
 
 export default Heart;
-// firebase.database().ref(`/fashion/${postId}/likes`).once('value').then(snapshot => {
-//   console.log(snapshot.val());
-// });

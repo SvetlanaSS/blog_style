@@ -8,7 +8,8 @@ import { Col, Thumbnail } from 'react-bootstrap';
 
 class BlogPost extends Component {
   render() {
-    const { forceFetchDataFirebase, post, showModalPost, post: { likes } } = this.props;
+
+    const { forceFetchDataFirebase, post, showModalPost, post: { likes }, location: { pathname } } = this.props;
     return (
       <div>
         <Col xs={12} sm={6} md={3} >
@@ -19,7 +20,13 @@ class BlogPost extends Component {
             <p style={{color: 'grey'}}>{post.hashtag}</p>
             <p style={{color: 'grey'}}>{Object.keys(post.likes).length} Likes</p>
             <hr/>
-            <Heart postLikes={likes} postId={post.id} likesList={post.likes} forceFetchDataFirebase={forceFetchDataFirebase} />
+            <Heart
+              route={pathname}
+              postLikes={likes}
+              postId={post.id}
+              likesList={post.likes}
+              forceFetchDataFirebase={forceFetchDataFirebase}
+            />
           </Thumbnail>
         </Col>
       </div>
