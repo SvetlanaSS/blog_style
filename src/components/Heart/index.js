@@ -10,9 +10,7 @@ class Heart extends Component {
     const currentUserEmail = readEmailFromLocalStorage();
     if (postLikes.length) {
       return postLikes.map(element => {
-        if (element.email === currentUserEmail) {
-          return true;
-        }
+        return (element.email === currentUserEmail) ? true : false;
       });
     }
   }
