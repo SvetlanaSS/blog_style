@@ -1,34 +1,13 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Heart from '../Heart';
 import { showModalPost } from '../../actions/modalPost';
 import { Col, Thumbnail } from 'react-bootstrap';
-import FaHeart from 'react-icons/lib/fa/heart';
-import FaHeartO from 'react-icons/lib/fa/heart-o';
-import { readEmailFromLocalStorage } from '../../helpers';
 
 class BlogPost extends Component {
-  determineHeartColor = () => {
-    const { post: { likes } } = this.props;
-    const currentUserEmail = readEmailFromLocalStorage();
-    if (likes.length) {
-      return likes.map(element => {
-        if (element.email === currentUserEmail) {
-          return true;
-        }
-      });
-    }
-  }
-
   render() {
-    const { post, showModalPost } = this.props;
-    const heartColor = this.determineHeartColor();
-
-    const Heart = styled(FaHeart)`
-      color: red;
-    `;
-
+    const { post, showModalPost, post: { likes } } = this.props;
     return (
       <div>
         <Col xs={12} sm={6} md={3} >
@@ -39,7 +18,7 @@ class BlogPost extends Component {
             <p style={{color: 'grey'}}>{post.hashtag}</p>
             <p style={{color: 'grey'}}>{post.likes_count} Likes</p>
             <hr/>
-            { heartColor ? <Heart /> : <FaHeartO /> }
+            <Heart postLikes={likes} />
           </Thumbnail>
         </Col>
       </div>
