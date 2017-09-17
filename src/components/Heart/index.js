@@ -43,7 +43,7 @@ class Heart extends Component {
     `;
 
     return (
-      <section>
+      <section style={{display: 'inline-block', marginRight: '1rem'}}>
         { heartColor ?
           <RedHeart onClick={() => this.DisLikePost(postId)} /> : <FaHeartO onClick={() => this.LikePost(postId)}/> }
       </section>

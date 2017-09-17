@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { forceFetchDataFirebase } from '../../actions/firebaseContent';
 import Heart from '../Heart';
+import Comment from '../Comment';
 import { showModalPost } from '../../actions/modalPost';
 import { Col, Thumbnail } from 'react-bootstrap';
 
@@ -18,15 +19,22 @@ class BlogPost extends Component {
             <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
             <p>{post.description.slice(0, 130) + '...'}</p>
             <p style={{color: 'grey'}}>{post.hashtag}</p>
-            <p style={{color: 'grey'}}>{Object.keys(post.likes).length} Likes</p>
+            <div>
+              <span style={{color: 'grey', display: 'inline-block', marginRight: '1rem'}}>{Object.keys(post.likes).length} Likes</span>
+              <span style={{color: 'grey', display: 'inline-block'}}>{Object.keys(post.comments).length} Comments</span>
+            </div>
             <hr/>
-            <Heart
-              route={pathname}
-              postLikes={likes}
-              postId={post.id}
-              likesList={post.likes}
-              forceFetchDataFirebase={forceFetchDataFirebase}
-            />
+            <div style={{display: 'inline-block'}}>
+              <Heart
+                route={pathname}
+                postLikes={likes}
+                postId={post.id}
+                likesList={post.likes}
+                forceFetchDataFirebase={forceFetchDataFirebase}
+              />
+              <Comment />
+            </div>
+
           </Thumbnail>
         </Col>
       </div>
