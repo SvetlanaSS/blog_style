@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, FormGroup, FormControl } from 'react-bootstrap';
 import { hideModalAddComment } from '../../actions/modalAddComment';
 // import firebase from '../../api/firebase';
 
@@ -11,7 +11,7 @@ class AddComment extends Component {
   //
   // }
   render() {
-    const { showModalAddComment, hideModalAddComment, comment } = this.props;
+    const { showModalAddComment, hideModalAddComment } = this.props;
     return (
       <section>
         <div className="static-modal">
@@ -20,15 +20,16 @@ class AddComment extends Component {
               <Modal.Title id="contained-modal-title-sm">Add comment</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <input
-                type="text"
-                name="comment"
-                className={'form-control'}
-                placeholder="Add your comment"
-              />
+              <FormGroup controlId="formControlsTextarea">
+                <FormControl
+                  name="comment"
+                  componentClass="textarea"
+                  placeholder="Add your comment here"
+                />
+              </FormGroup>
             </Modal.Body>
             <Modal.Footer>
-              <Button disabled={!(comment)}>Cancel</Button>
+              <Button>Cancel</Button>
               <Button>Add</Button>
             </Modal.Footer>
           </Modal>
