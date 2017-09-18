@@ -38,17 +38,14 @@ class BlogPost extends Component {
             />
             <section style={{display: 'inline-block'}}>
               <p>
-                <a style={{color: 'grey'}} onClick={() => showModalAddComment()}>
-                Add comment
+                <a
+                  style={{color: 'grey'}}
+                  onClick={() => showModalAddComment(post, pathname)}
+                >
+                  Add comment
                 </a>
               </p>
             </section>
-            {/* <Comment
-              route={pathname}
-              postComments={comments}
-              postId={post.id}
-              forceFetchDataFirebase={forceFetchDataFirebase}
-            /> */}
           </Thumbnail>
         </Col>
       </div>

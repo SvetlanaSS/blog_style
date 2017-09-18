@@ -9,10 +9,11 @@ import Menu from '../Menu';
 import BlogPostModal from '../BlogPostModal';
 import AddComment from '../CommentAdd';
 import { showModalSearch } from '../../actions/modalSearch';
+import { forceFetchDataFirebase } from '../../actions/firebaseContent';
 
 class App extends Component {
   render() {
-    const { authenticated, showModalSearch } = this.props;
+    const { authenticated, showModalSearch, forceFetchDataFirebase } = this.props;
     return (
       <div>
         <Header authenticated={ authenticated } showModalSearch={showModalSearch} />
@@ -20,7 +21,7 @@ class App extends Component {
         { authenticated ? this.props.children : <AuthorisationForm /> }
         <Loader />
         <BlogPostModal />
-        <AddComment />
+        <AddComment forceFetchDataFirebase={forceFetchDataFirebase}/>
         <Footer />
       </div>
     );
@@ -34,7 +35,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ showModalSearch }, dispatch);
+  return bindActionCreators({ showModalSearch, forceFetchDataFirebase }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

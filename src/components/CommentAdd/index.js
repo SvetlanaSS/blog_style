@@ -1,15 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Modal, Button, FormGroup, FormControl } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import { hideModalAddComment } from '../../actions/modalAddComment';
-// import firebase from '../../api/firebase';
+import { readEmailFromLocalStorage } from '../../helpers';
+import firebase from '../../api/firebase';
 
 class AddComment extends Component {
-  // addComment = () => {
-  //   // const { postComments, forceFetchDataFirebase, route } = this.props;
-  //
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      comment: '',
+    };
+  }
+
+  handleOnChange = (e) => {
+    this.setState({ [e.target.name] : e.target.value });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { forceFetchDataFirebase, pathname, post, hideModalAddComment } = this.props;
+    const currentUserEmail = readEmailFromLocalStorage();
+
+    firebase.database().ref(`${pathname}/${post.id}/comments`).push({
+      email: currentUserEmail,
+      comment: this.state.comment
+    });
+    hideModalAddComment();
+    forceFetchDataFirebase();
+  }
+
   render() {
     const { showModalAddComment, hideModalAddComment } = this.props;
     return (
@@ -20,18 +41,20 @@ class AddComment extends Component {
               <Modal.Title id="contained-modal-title-sm">Add comment</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <FormGroup controlId="formControlsTextarea">
-                <FormControl
-                  name="comment"
-                  componentClass="textarea"
-                  placeholder="Add your comment here"
-                />
-              </FormGroup>
+              <form onSubmit={this.handleSubmit}>
+                <div style={{paddingBottom: '1.5rem'}}>
+                  <textarea
+                    type="text"
+                    name="comment"
+                    className={'form-control'}
+                    placeholder="Add your comment here"
+                    onChange={this.handleOnChange}
+                  />
+                </div>
+                <Button type='submit' style={{marginRight: '1rem'}}>Add</Button>
+                <Button onClick={() => hideModalAddComment()}>Cancel</Button>
+              </form>
             </Modal.Body>
-            <Modal.Footer>
-              <Button>Cancel</Button>
-              <Button>Add</Button>
-            </Modal.Footer>
           </Modal>
         </div>
       </section>
@@ -42,6 +65,8 @@ class AddComment extends Component {
 function mapStateToProps(state) {
   return {
     showModalAddComment: state.modalAddComment.showModalAddComment,
+    post: state.modalAddComment.post,
+    pathname: state.modalAddComment.pathname,
   };
 }
 
@@ -50,12 +75,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddComment);
-
-// firebase.database().ref("user").push({
-//   email: "Email",
-//   commets: {
-//     "8975298nkfjaslndflka": {    // key
-//        comment: "Hej"
-//     "kejrgkjsei7": true
-//   }
-// });
