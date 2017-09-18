@@ -4,6 +4,7 @@ import loader from './loader';
 import modalPost from './modalPost';
 import firebaseContent from './firebaseContent';
 import modalSearch from './modalSearch';
+import modalAddComment from './modalAddComment';
 import likes from './likes';
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   modalPost,
   firebaseContent,
   modalSearch,
-  likes
+  likes,
+  modalAddComment
 });
 
 export default rootReducer;
