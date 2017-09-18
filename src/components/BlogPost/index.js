@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Col, Thumbnail, Popover, OverlayTrigger } from 'react-bootstrap';
 import { forceFetchDataFirebase } from '../../actions/firebaseContent';
 import Heart from '../Heart';
 import { showModalPost } from '../../actions/modalPost';
 import { showModalAddComment } from '../../actions/modalAddComment';
-import { Col, Thumbnail } from 'react-bootstrap';
 
 class BlogPost extends Component {
+  renderPopoverLikes = (likes) => {
+    return (
+      <Popover id="popover-positioned-bottom" title="Liked by">
+        {
+          Object.keys(likes).map(key => {
+            return (
+              <div>{likes[key].email}</div>
+            );
+          })
+        }
+      </Popover>
+    );
+  }
+
   render() {
     const { forceFetchDataFirebase, post, showModalPost, showModalAddComment, post: { likes }, location: { pathname } } = this.props;
     return (
@@ -19,11 +33,13 @@ class BlogPost extends Component {
             <p>{post.description.slice(0, 130) + '...'}</p>
             <p style={{color: 'grey'}}>{post.hashtag}</p>
             <div>
-              <span style={{color: 'grey', display: 'inline-block', marginRight: '1rem'}}>
-                {Object.keys(post.likes).length} Likes
-              </span>
+              <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={this.renderPopoverLikes(post.likes)}>
+                <a style={{color: 'grey', cursor: 'pointer', marginRight: '1rem'}}>
+                  {Object.keys(post.likes).length} Likes
+                </a>
+              </OverlayTrigger>
               <span style={{color: 'grey', display: 'inline-block'}}>
-                <a style={{color: 'grey'}}>
+                <a style={{color: 'grey', cursor: 'pointer'}}>
                   {Object.keys(post.comments).length} Comments
                 </a>
               </span>
@@ -39,7 +55,7 @@ class BlogPost extends Component {
             <section style={{display: 'inline-block'}}>
               <p>
                 <a
-                  style={{color: 'grey'}}
+                  style={{color: 'grey', cursor: 'pointer'}}
                   onClick={() => showModalAddComment(post, pathname)}
                 >
                   Add comment
