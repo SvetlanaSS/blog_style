@@ -10,7 +10,7 @@ import { Col, Thumbnail } from 'react-bootstrap';
 class BlogPost extends Component {
   render() {
 
-    const { forceFetchDataFirebase, post, showModalPost, post: { likes }, location: { pathname } } = this.props;
+    const { forceFetchDataFirebase, post, showModalPost, post: { likes }, post: { comments }, location: { pathname } } = this.props;
     return (
       <div>
         <Col xs={12} sm={6} md={3} >
@@ -20,8 +20,14 @@ class BlogPost extends Component {
             <p>{post.description.slice(0, 130) + '...'}</p>
             <p style={{color: 'grey'}}>{post.hashtag}</p>
             <div>
-              <span style={{color: 'grey', display: 'inline-block', marginRight: '1rem'}}>{Object.keys(post.likes).length} Likes</span>
-              <span style={{color: 'grey', display: 'inline-block'}}>{Object.keys(post.comments).length} Comments</span>
+              <span style={{color: 'grey', display: 'inline-block', marginRight: '1rem'}}>
+                {Object.keys(post.likes).length} Likes
+              </span>
+              <span style={{color: 'grey', display: 'inline-block'}}>
+                <a style={{color: 'grey'}}>
+                  {Object.keys(post.comments).length} Comments
+                </a>
+              </span>
             </div>
             <hr/>
             <div style={{display: 'inline-block'}}>
@@ -32,9 +38,13 @@ class BlogPost extends Component {
                 likesList={post.likes}
                 forceFetchDataFirebase={forceFetchDataFirebase}
               />
-              <Comment />
+              <Comment
+                route={pathname}
+                postComments={comments}
+                postId={post.id}
+                forceFetchDataFirebase={forceFetchDataFirebase}
+              />
             </div>
-
           </Thumbnail>
         </Col>
       </div>
