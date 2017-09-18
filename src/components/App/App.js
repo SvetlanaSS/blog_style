@@ -7,6 +7,7 @@ import AuthorisationForm from '../AuthorisationForm';
 import Loader from '../Loader';
 import Menu from '../Menu';
 import BlogPostModal from '../BlogPostModal';
+import AddComment from '../CommentAdd';
 import { showModalSearch } from '../../actions/modalSearch';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
         { authenticated ? this.props.children : <AuthorisationForm /> }
         <Loader />
         <BlogPostModal />
+        <AddComment />
         <Footer />
       </div>
     );

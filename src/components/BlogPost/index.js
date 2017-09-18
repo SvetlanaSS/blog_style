@@ -3,14 +3,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { forceFetchDataFirebase } from '../../actions/firebaseContent';
 import Heart from '../Heart';
-import Comment from '../Comment';
 import { showModalPost } from '../../actions/modalPost';
+import { showModalAddComment } from '../../actions/modalAddComment';
 import { Col, Thumbnail } from 'react-bootstrap';
 
 class BlogPost extends Component {
   render() {
-
-    const { forceFetchDataFirebase, post, showModalPost, post: { likes }, post: { comments }, location: { pathname } } = this.props;
+    const { forceFetchDataFirebase, post, showModalPost, showModalAddComment, post: { likes }, location: { pathname } } = this.props;
     return (
       <div>
         <Col xs={12} sm={6} md={3} >
@@ -30,21 +29,26 @@ class BlogPost extends Component {
               </span>
             </div>
             <hr/>
-            <div style={{display: 'inline-block'}}>
-              <Heart
-                route={pathname}
-                postLikes={likes}
-                postId={post.id}
-                likesList={post.likes}
-                forceFetchDataFirebase={forceFetchDataFirebase}
-              />
-              <Comment
-                route={pathname}
-                postComments={comments}
-                postId={post.id}
-                forceFetchDataFirebase={forceFetchDataFirebase}
-              />
-            </div>
+            <Heart
+              route={pathname}
+              postLikes={likes}
+              postId={post.id}
+              likesList={post.likes}
+              forceFetchDataFirebase={forceFetchDataFirebase}
+            />
+            <section style={{display: 'inline-block'}}>
+              <p>
+                <a style={{color: 'grey'}} onClick={() => showModalAddComment()}>
+                Add comment
+                </a>
+              </p>
+            </section>
+            {/* <Comment
+              route={pathname}
+              postComments={comments}
+              postId={post.id}
+              forceFetchDataFirebase={forceFetchDataFirebase}
+            /> */}
           </Thumbnail>
         </Col>
       </div>
@@ -53,7 +57,7 @@ class BlogPost extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ showModalPost, forceFetchDataFirebase }, dispatch);
+  return bindActionCreators({ showModalPost, forceFetchDataFirebase, showModalAddComment }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(BlogPost);
