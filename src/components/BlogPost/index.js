@@ -22,6 +22,22 @@ class BlogPost extends Component {
     );
   }
 
+  renderPopoverComments = (comments) => {
+    return (
+      <Popover id="popover-positioned-bottom" title="Comments">
+        {
+          Object.keys(comments).map(key => {
+            return (
+              <div>
+                <strong>{comments[key].email}:</strong> {comments[key].comment}
+              </div>
+            );
+          })
+        }
+      </Popover>
+    );
+  }
+
   render() {
     const { forceFetchDataFirebase, post, showModalPost, showModalAddComment, post: { likes }, location: { pathname } } = this.props;
     return (
@@ -38,11 +54,11 @@ class BlogPost extends Component {
                   {Object.keys(post.likes).length} Likes
                 </a>
               </OverlayTrigger>
-              <span style={{color: 'grey', display: 'inline-block'}}>
-                <a style={{color: 'grey', cursor: 'pointer'}}>
+              <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={this.renderPopoverComments(post.comments)}>
+                <a style={{color: 'grey', cursor: 'pointer', marginRight: '1rem'}}>
                   {Object.keys(post.comments).length} Comments
                 </a>
-              </span>
+              </OverlayTrigger>
             </div>
             <hr/>
             <Heart
