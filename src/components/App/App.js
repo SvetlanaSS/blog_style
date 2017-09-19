@@ -16,6 +16,7 @@ class App extends Component {
     const { authenticated, showModalSearch, forceFetchDataFirebase } = this.props;
     return (
       <div>
+        { authenticated ? null : <div style={{backgroundImage: 'url(../../../main_foto.jpg)', backgroundSize: 'cover'}} />}
         <Header authenticated={ authenticated } showModalSearch={showModalSearch} />
         { authenticated ? <Menu /> : null }
         { authenticated ? this.props.children : <AuthorisationForm /> }

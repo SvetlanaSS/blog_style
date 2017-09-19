@@ -17,7 +17,7 @@ Vad man kan göra på applikationen:
   * En användare kan inte rösta på samma post flera gånger.
   * En användare kan ta bort sin röst från en post.
   * Email-adress, som gillar post, visas upp i popup fönstret.
-* Man kan kommentera inlägg.
+* Man kan kommentera inlägg. Email-adress, som kommenterar post, visas upp i popup fönstret.
 
 
 Hur redux fungerar i min applikation (t.ex. för login):
