@@ -19,6 +19,20 @@ class BlogPostModal extends Component {
     }
   }
 
+  renderComments = () => {
+    const { post } = this.props;
+    const comments = Object.keys(post.comments).length;
+    if (comments === 1 || 0) {
+      return (
+        <span>{comments} Comment</span>
+      );
+    } else {
+      return (
+        <span>{comments} Comments</span>
+      );
+    }
+  }
+
   render() {
     const { post, showModalPost, hideModalPost } = this.props;
     return (
@@ -31,13 +45,12 @@ class BlogPostModal extends Component {
           <p style={{color: 'grey', fontSize: '1rem'}}>Published: {post.date}</p>
           <p>{post.description}</p>
           <p style={{color: 'grey'}}>{post.hashtag}</p>
-
-          <div>
-            <a style={{color: 'grey', cursor: 'pointer', marginRight: '1rem'}}>
-              { Object.keys(post).length ? this.renderLikes() : null }
-            </a>
-          </div>
-
+          <span style={{color: 'grey', marginRight: '1rem'}}>
+            { Object.keys(post).length ? this.renderLikes() : null }
+          </span>
+          <span style={{color: 'grey', marginRight: '1rem'}}>
+            { Object.keys(post).length ? this.renderComments() : null }
+          </span>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => hideModalPost()}>Close</Button>
