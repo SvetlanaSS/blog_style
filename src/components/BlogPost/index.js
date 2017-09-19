@@ -12,9 +12,9 @@ class BlogPost extends Component {
     return (
       <Popover id="popover-positioned-bottom" title="Liked by">
         {
-          Object.keys(likes).map(key => {
+          Object.keys(likes).map((key, i) => {
             return (
-              <div>{likes[key].email}</div>
+              <div key={i}>{likes[key].email}</div>
             );
           })
         }
@@ -26,10 +26,10 @@ class BlogPost extends Component {
     return (
       <Popover id="popover-positioned-bottom" title="Comments">
         {
-          Object.keys(comments).map(key => {
+          Object.keys(comments).map((key, i) => {
             return (
-              <div>
-                <strong>{comments[key].email}:</strong> {comments[key].comment}
+              <div key={i}>
+                <strong >{comments[key].email}:</strong> {comments[key].comment}
               </div>
             );
           })
