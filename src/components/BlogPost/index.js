@@ -40,6 +40,8 @@ class BlogPost extends Component {
 
   render() {
     const { forceFetchDataFirebase, post, showModalPost, showModalAddComment, post: { likes }, location: { pathname } } = this.props;
+    const objectLengthLikes = Object.keys(post.likes).length;
+    const objectLengthComments = Object.keys(post.comments).length;
     return (
       <div>
         <Col xs={12} sm={6} md={3} >
@@ -51,12 +53,12 @@ class BlogPost extends Component {
             <div>
               <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={this.renderPopoverLikes(post.likes)}>
                 <a style={{color: 'grey', cursor: 'pointer', marginRight: '1rem'}}>
-                  {Object.keys(post.likes).length} Likes
+                  { (objectLengthLikes === 1 || 0) ? <span>{objectLengthLikes} Like</span> : <span>{objectLengthLikes} Likes</span> }
                 </a>
               </OverlayTrigger>
               <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={this.renderPopoverComments(post.comments)}>
                 <a style={{color: 'grey', cursor: 'pointer', marginRight: '1rem'}}>
-                  {Object.keys(post.comments).length} Comments
+                  { (objectLengthComments === 1 || 0) ? <span>{objectLengthComments} Comment</span> : <span>{objectLengthComments} Comments</span> }
                 </a>
               </OverlayTrigger>
             </div>
