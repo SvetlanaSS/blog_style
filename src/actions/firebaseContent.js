@@ -7,6 +7,9 @@ import {
   APPLY_FILTER_FASHION_TODAYS_POSTS,
   APPLY_FILTER_BEAUTY_TODAYS_POSTS,
   APPLY_FILTER_FITNESS_TODAYS_POSTS,
+  REMOVE_FILTER_FASHION_TODAYS_POSTS,
+  REMOVE_FILTER_BEAUTY_TODAYS_POSTS,
+  REMOVE_FILTER_FITNESS_TODAYS_POSTS,
 } from './types';
 
 export function todaysPostsFilter(location) {
@@ -33,19 +36,33 @@ export function todaysPostsFilter(location) {
   };
 }
 
-export function fetchDataFirebase() {
-  return (dispatch, getState) => {
-    const { firebaseContent } = getState();
-    if (!firebaseContent.fashion.length) {
-      firebase.database().ref('/').once('value')
-        .then(data => {
-          const response = data.val();
-          dispatch({ type: FETCH_DATA_FROM_FIREBASE_SUCCESS, response });
-        })
-        .catch(error => {
-          dispatch({ type: FETCH_DATA_FROM_FIREBASE_ERROR, error });
-        });
+export function removeTodaysPostsFilter(location) {
+  return dispatch => {
+    if (location.includes('fashion')) {
+      dispatch({ type: REMOVE_FILTER_FASHION_TODAYS_POSTS });
+      dispatch(fetchDataFirebase());
+    } else if (location.includes('beauty')) {
+      dispatch({ type: REMOVE_FILTER_BEAUTY_TODAYS_POSTS });
+      dispatch(fetchDataFirebase());
+    } else if (location.includes('fitness')) {
+      dispatch({ type: REMOVE_FILTER_FITNESS_TODAYS_POSTS });
+      dispatch(fetchDataFirebase());
+    } else {
+      return null;
     }
+  };
+}
+
+export function fetchDataFirebase() {
+  return (dispatch) => {
+    firebase.database().ref('/').once('value')
+      .then(data => {
+        const response = data.val();
+        dispatch({ type: FETCH_DATA_FROM_FIREBASE_SUCCESS, response });
+      })
+      .catch(error => {
+        dispatch({ type: FETCH_DATA_FROM_FIREBASE_ERROR, error });
+      });
   };
 }
 
