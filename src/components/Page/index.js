@@ -44,7 +44,7 @@ class Page extends Component {
     }
     return (
       <Grid>
-        <Search />
+        <Search {...this.props} />
         {this.renderPosts(data)}
       </Grid>
     );
