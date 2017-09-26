@@ -3,8 +3,27 @@ import {
   FETCH_DATA_FROM_FIREBASE_SUCCESS,
   FETCH_DATA_FROM_FIREBASE_ERROR,
   FORCE_FETCH_DATA_FROM_FIREBASE_SUCCESS,
-  FORCE_FETCH_DATA_FROM_FIREBASE_ERROR
+  FORCE_FETCH_DATA_FROM_FIREBASE_ERROR,
+  APPLY_FILTER_TODAYS_POSTS,
 } from './types';
+
+export function todaysPostsFilter(location) {
+  return (dispatch, getState) => {
+    const { firebaseContent: { fashion, beauty, fitness } } = getState();
+    if (location.includes('fashion')) {
+      const fashionData = fashion.map(e => e.date === '2017-09-12');
+      dispatch({ type: APPLY_FILTER_TODAYS_POSTS, fashionData });
+    } else if (location.includes('beauty')) {
+      const beautyData = beauty.map(e => e.date === '2017-09-12');
+      dispatch({ type: APPLY_FILTER_TODAYS_POSTS, beautyData });
+    } else if (location.includes('fitness')) {
+      const fitnessData = fitness.map(e => e.date === '2017-09-12');
+      dispatch({ type: APPLY_FILTER_TODAYS_POSTS, fitnessData });
+    } else {
+      return null;
+    }
+  };
+}
 
 export function fetchDataFirebase() {
   return (dispatch, getState) => {
