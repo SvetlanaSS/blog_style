@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import FaClose from 'react-icons/lib/fa/close';
 import { hideModalSearch } from '../../actions/modalSearch';
 import { Panel, Collapse, FormGroup, FormControl, Button } from 'react-bootstrap';
-import { todaysPostsFilter, removeTodaysPostsFilter, mostLikedPostsFilter } from '../../actions/firebaseContent';
+import { todaysPostsFilter, removeTodaysPostsFilter, mostLikedPostsFilter, removeMostLikedPostsFilter } from '../../actions/firebaseContent';
 import styled from 'styled-components';
 
 const Checkbox = styled.span`
@@ -25,13 +25,13 @@ class Search extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    const { location: { pathname }, todaysPostsFilter, removeTodaysPostsFilter, mostLikedPostsFilter } = this.props;
+    const { location: { pathname }, todaysPostsFilter, removeTodaysPostsFilter, mostLikedPostsFilter, removeMostLikedPostsFilter } = this.props;
     this.setState({ [name]: value });
 
     if (name === 'todaysPosts') {
       this.state.todaysPosts ? removeTodaysPostsFilter(pathname) : todaysPostsFilter(pathname);
     } else if (name === 'mostLikedPosts') {
-      this.state.mostLikedPosts ? console.log(11123) : mostLikedPostsFilter(pathname);
+      this.state.mostLikedPosts ? removeMostLikedPostsFilter(pathname) : mostLikedPostsFilter(pathname);
     } else {
       null;
     }
@@ -89,7 +89,8 @@ function mapDispatchToProps(dispatch) {
     hideModalSearch,
     todaysPostsFilter,
     removeTodaysPostsFilter,
-    mostLikedPostsFilter
+    mostLikedPostsFilter,
+    removeMostLikedPostsFilter
   }, dispatch);
 }
 

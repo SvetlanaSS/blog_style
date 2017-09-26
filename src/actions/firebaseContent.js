@@ -12,7 +12,10 @@ import {
   REMOVE_FILTER_FITNESS_TODAYS_POSTS,
   APPLY_FILTERS_FASHION_MOSTS_LIKED,
   APPLY_FILTERS_BEAUTY_MOSTS_LIKED,
-  APPLY_FILTERS_FITNESS_MOSTS_LIKED
+  APPLY_FILTERS_FITNESS_MOSTS_LIKED,
+  REMOVE_FILTER_FASHION_MOSTS_LIKED,
+  REMOVE_FILTER_BEAUTY_MOSTS_LIKED,
+  REMOVE_FILTER_FITNESS_MOSTS_LIKED
 } from './types';
 
 export function todaysPostsFilter(location) {
@@ -74,6 +77,23 @@ export function mostLikedPostsFilter(location) {
         return (Object.keys(a.likes).length > Object.keys(b.likes).length ? -1 : Object.keys(a.likes).length < Object.keys(b.likes).length ? 1 : 0);
       });
       dispatch({ type: APPLY_FILTERS_FITNESS_MOSTS_LIKED, fitnessData });
+    } else {
+      return null;
+    }
+  };
+}
+
+export function removeMostLikedPostsFilter(location) {
+  return dispatch => {
+    if (location.includes('fashion')) {
+      dispatch({ type: REMOVE_FILTER_FASHION_MOSTS_LIKED });
+      dispatch(fetchDataFirebase());
+    } else if (location.includes('beauty')) {
+      dispatch({ type: REMOVE_FILTER_BEAUTY_MOSTS_LIKED });
+      dispatch(fetchDataFirebase());
+    } else if (location.includes('fitness')) {
+      dispatch({ type: REMOVE_FILTER_FITNESS_MOSTS_LIKED });
+      dispatch(fetchDataFirebase());
     } else {
       return null;
     }
