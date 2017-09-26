@@ -5,7 +5,10 @@ import {
   FORCE_FETCH_DATA_FROM_FIREBASE_ERROR,
   APPLY_FILTER_FASHION_TODAYS_POSTS,
   APPLY_FILTER_BEAUTY_TODAYS_POSTS,
-  APPLY_FILTER_FITNESS_TODAYS_POSTS
+  APPLY_FILTER_FITNESS_TODAYS_POSTS,
+  APPLY_FILTERS_FASHION_MOSTS_LIKED,
+  APPLY_FILTERS_BEAUTY_MOSTS_LIKED,
+  APPLY_FILTERS_FITNESS_MOSTS_LIKED
 } from '../actions/types';
 
 const initialState = {
@@ -46,6 +49,18 @@ export default function(state = initialState, action) {
       beauty: action.beautyData
     };
   case APPLY_FILTER_FITNESS_TODAYS_POSTS:
+    return {
+      fitness: action.fitnessData
+    };
+  case APPLY_FILTERS_FASHION_MOSTS_LIKED:
+    return {
+      fashion: action.fashionData
+    };
+  case APPLY_FILTERS_BEAUTY_MOSTS_LIKED:
+    return {
+      beauty: action.beautyData
+    };
+  case APPLY_FILTERS_FITNESS_MOSTS_LIKED:
     return {
       fitness: action.fitnessData
     };

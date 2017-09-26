@@ -10,6 +10,9 @@ import {
   REMOVE_FILTER_FASHION_TODAYS_POSTS,
   REMOVE_FILTER_BEAUTY_TODAYS_POSTS,
   REMOVE_FILTER_FITNESS_TODAYS_POSTS,
+  APPLY_FILTERS_FASHION_MOSTS_LIKED,
+  APPLY_FILTERS_BEAUTY_MOSTS_LIKED,
+  APPLY_FILTERS_FITNESS_MOSTS_LIKED
 } from './types';
 
 export function todaysPostsFilter(location) {
@@ -47,6 +50,30 @@ export function removeTodaysPostsFilter(location) {
     } else if (location.includes('fitness')) {
       dispatch({ type: REMOVE_FILTER_FITNESS_TODAYS_POSTS });
       dispatch(fetchDataFirebase());
+    } else {
+      return null;
+    }
+  };
+}
+
+export function mostLikedPostsFilter(location) {
+  return (dispatch, getState) => {
+    const { firebaseContent: { fashion, beauty, fitness } } = getState();
+    if (location.includes('fashion')) {
+      const fashionData = fashion.sort((a, b) => {
+        return (Object.keys(a.likes).length > Object.keys(b.likes).length ? -1 : Object.keys(a.likes).length < Object.keys(b.likes).length ? 1 : 0);
+      });
+      dispatch({ type: APPLY_FILTERS_FASHION_MOSTS_LIKED, fashionData });
+    } else if (location.includes('beauty')) {
+      const beautyData = beauty.sort((a, b) => {
+        return (Object.keys(a.likes).length > Object.keys(b.likes).length ? -1 : Object.keys(a.likes).length < Object.keys(b.likes).length ? 1 : 0);
+      });
+      dispatch({ type: APPLY_FILTERS_BEAUTY_MOSTS_LIKED, beautyData });
+    } else if (location.includes('fitness')) {
+      const fitnessData = fitness.sort((a, b) => {
+        return (Object.keys(a.likes).length > Object.keys(b.likes).length ? -1 : Object.keys(a.likes).length < Object.keys(b.likes).length ? 1 : 0);
+      });
+      dispatch({ type: APPLY_FILTERS_FITNESS_MOSTS_LIKED, fitnessData });
     } else {
       return null;
     }
