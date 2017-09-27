@@ -15,7 +15,13 @@ import {
   APPLY_FILTERS_FITNESS_MOSTS_LIKED,
   REMOVE_FILTER_FASHION_MOSTS_LIKED,
   REMOVE_FILTER_BEAUTY_MOSTS_LIKED,
-  REMOVE_FILTER_FITNESS_MOSTS_LIKED
+  REMOVE_FILTER_FITNESS_MOSTS_LIKED,
+  APPLY_FILTER_FASHION_SEARCH_BY_HASHTAG,
+  APPLY_FILTER_BEAUTY_SEARCH_BY_HASHTAG,
+  APPLY_FILTER_FITNESS_SEARCH_BY_HASHTAG,
+  // REMOVE_FILTER_FASHION_SEARCH_BY_HASHTAG,
+  // REMOVE_FILTER_BEAUTY_SEARCH_BY_HASHTAG,
+  // REMOVE_FILTER_FITNESS_SEARCH_BY_HASHTAG,
 } from './types';
 
 export function todaysPostsFilter(location) {
@@ -94,6 +100,30 @@ export function removeMostLikedPostsFilter(location) {
     } else if (location.includes('fitness')) {
       dispatch({ type: REMOVE_FILTER_FITNESS_MOSTS_LIKED });
       dispatch(fetchDataFirebase());
+    } else {
+      return null;
+    }
+  };
+}
+
+export function searchByHashtag(location) {
+  return (dispatch, getState) => {
+    const { firebaseContent: { fashion, beauty, fitness } } = getState();
+    if (location.includes('fashion')) {
+      const fashionData = fashion.filter(item => {
+        return item.hashtag.includes();
+      });
+      dispatch({ type: APPLY_FILTER_FASHION_SEARCH_BY_HASHTAG, fashionData });
+    } else if (location.includes('beauty')) {
+      const beautyData = beauty.filter(item => {
+        return item.hashtag.includes();
+      });
+      dispatch({ type: APPLY_FILTER_BEAUTY_SEARCH_BY_HASHTAG, beautyData });
+    } else if (location.includes('fitness')) {
+      const fitnessData = fitness.filter(item => {
+        return item.hashtag.includes();
+      });
+      dispatch({ type: APPLY_FILTER_FITNESS_SEARCH_BY_HASHTAG, fitnessData });
     } else {
       return null;
     }

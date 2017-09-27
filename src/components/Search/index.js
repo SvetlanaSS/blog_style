@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import FaClose from 'react-icons/lib/fa/close';
 import { hideModalSearch } from '../../actions/modalSearch';
-import { Panel, Collapse, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Panel, Collapse, FormGroup, Button } from 'react-bootstrap';
 import { todaysPostsFilter, removeTodaysPostsFilter, mostLikedPostsFilter, removeMostLikedPostsFilter } from '../../actions/firebaseContent';
 import styled from 'styled-components';
 
@@ -18,9 +18,11 @@ class Search extends Component {
     this.state = {
       todaysPosts: false,
       mostLikedPosts: false,
+      hashtag: ''
     };
   }
 
+  // för checkbox
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -35,6 +37,17 @@ class Search extends Component {
     } else {
       null;
     }
+  }
+
+  // för input-fält
+  handleOnChange = (e) => {
+    this.setState({ [e.target.name] : e.target.value });
+  }
+
+  handleSubmit = (e) => {
+    const { location: { pathname } } = this.state;
+    e.preventDefault();
+    this.props.searchByHashtag(pathname);
   }
 
   render() {
@@ -63,13 +76,15 @@ class Search extends Component {
                 />
                 <Checkbox>Most liked posts</Checkbox>
               </FormGroup>
-              <div>
-                <FormControl
+              <form onSubmit={this.handleSubmit}>
+                <input
                   type="text"
                   placeholder="Enter hashtag"
+                  className="form-control"
+                  onChange={this.handleOnChange}
                 />
                 <Button bsSize="small" style={{marginTop: '1rem'}}>Search</Button>
-              </div>
+              </form>
             </Panel>
           </div>
         </Collapse>
