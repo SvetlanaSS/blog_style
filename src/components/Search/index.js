@@ -9,7 +9,8 @@ import {
   removeTodaysPostsFilter,
   mostLikedPostsFilter,
   removeMostLikedPostsFilter,
-  searchByHashtag
+  searchByHashtag,
+  fetchDataFirebase
 } from '../../actions/firebaseContent';
 import styled from 'styled-components';
 
@@ -24,7 +25,8 @@ class Search extends Component {
     this.state = {
       todaysPosts: false,
       mostLikedPosts: false,
-      hashtag: ''
+      hashtag: '',
+      searchClicked: false
     };
   }
 
@@ -53,13 +55,25 @@ class Search extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { location: { pathname }, searchByHashtag } = this.props;
-    const { hashtag } = this.state;
+    const { hashtag, searchClicked } = this.state;
     searchByHashtag(pathname, hashtag);
+    this.setState({ searchClicked: searchClicked ? false : true });
+  }
+
+  resetFilters = () => {
+    this.props.fetchDataFirebase();
+    // this.forceUpdate();
+    this.setState({
+      searchClicked: false,
+      todaysPosts: false,
+      mostLikedPosts: false,
+      hashtag: ''
+    });
   }
 
   render() {
     const { hideModalSearch, showSearch } = this.props;
-    const { todaysPosts, mostLikedPosts } = this.state;
+    const { todaysPosts, mostLikedPosts, searchClicked } = this.state;
     const wellStyles = {maxWidth: 400, margin: '0 auto'};
     return (
       <div style={wellStyles}>
@@ -92,8 +106,17 @@ class Search extends Component {
                   onChange={this.handleOnChange}
                   value={this.state.hashtag}
                 />
-                <Button type="submit" bsSize="small" style={{marginTop: '1rem'}}>Search</Button>
+                {!searchClicked && <Button type="submit" bsSize="small" style={{marginTop: '1rem'}} >Search</Button>}
               </form>
+              {
+                searchClicked && <Button
+                  onClick={this.resetFilters}
+                  bsSize="small"
+                  style={{marginTop: '1rem'}}
+                >
+                  Clear filters
+                </Button>
+              }
             </Panel>
           </div>
         </Collapse>
@@ -115,7 +138,8 @@ function mapDispatchToProps(dispatch) {
     removeTodaysPostsFilter,
     mostLikedPostsFilter,
     removeMostLikedPostsFilter,
-    searchByHashtag
+    searchByHashtag,
+    fetchDataFirebase
   }, dispatch);
 }
 
