@@ -6,6 +6,7 @@ import {
   USER_AUTHORIZED,
   USER_LOGGED_OUT,
 } from './types';
+import Firebase from 'firebase';
 
 export function signInUser(email, password) {
   return dispatch => {
@@ -37,5 +38,16 @@ export function signOutUser() {
   return dispatch => {
     dispatch({ type: USER_LOGGED_OUT });
     return firebase.auth().signOut();
+  };
+}
+
+export function signInWithFacebook() {
+  let provider = new Firebase.auth.FacebookAuthProvider();
+  return dispatch => {
+    firebase.auth().signInWithPopup(provider).then(() => {
+      dispatch({ type: USER_AUTHORIZED });
+    }).catch(() => {
+      dispatch({ type: AUTH_ERROR, message: 'Error' });
+    });
   };
 }
