@@ -4,7 +4,13 @@ import { bindActionCreators } from 'redux';
 import FaClose from 'react-icons/lib/fa/close';
 import { hideModalSearch } from '../../actions/modalSearch';
 import { Panel, Collapse, FormGroup, Button } from 'react-bootstrap';
-import { todaysPostsFilter, removeTodaysPostsFilter, mostLikedPostsFilter, removeMostLikedPostsFilter } from '../../actions/firebaseContent';
+import {
+  todaysPostsFilter,
+  removeTodaysPostsFilter,
+  mostLikedPostsFilter,
+  removeMostLikedPostsFilter,
+  searchByHashtag
+} from '../../actions/firebaseContent';
 import styled from 'styled-components';
 
 const Checkbox = styled.span`
@@ -44,10 +50,11 @@ class Search extends Component {
     this.setState({ [e.target.name] : e.target.value });
   }
 
-  handleSubmit = (e) => {
-    const { location: { pathname } } = this.state;
-    e.preventDefault();
-    this.props.searchByHashtag(pathname);
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { location: { pathname }, searchByHashtag } = this.props;
+    const { hashtag } = this.state;
+    searchByHashtag(pathname, hashtag);
   }
 
   render() {
@@ -78,12 +85,14 @@ class Search extends Component {
               </FormGroup>
               <form onSubmit={this.handleSubmit}>
                 <input
+                  name="hashtag"
                   type="text"
                   placeholder="Enter hashtag"
                   className="form-control"
                   onChange={this.handleOnChange}
+                  value={this.state.hashtag}
                 />
-                <Button bsSize="small" style={{marginTop: '1rem'}}>Search</Button>
+                <Button type="submit" bsSize="small" style={{marginTop: '1rem'}}>Search</Button>
               </form>
             </Panel>
           </div>
@@ -105,7 +114,8 @@ function mapDispatchToProps(dispatch) {
     todaysPostsFilter,
     removeTodaysPostsFilter,
     mostLikedPostsFilter,
-    removeMostLikedPostsFilter
+    removeMostLikedPostsFilter,
+    searchByHashtag
   }, dispatch);
 }
 
