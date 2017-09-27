@@ -43,7 +43,7 @@ class Search extends Component {
     } else if (name === 'mostLikedPosts') {
       this.state.mostLikedPosts ? removeMostLikedPostsFilter(pathname) : mostLikedPostsFilter(pathname);
     } else {
-      null;
+      return null;
     }
   }
 
