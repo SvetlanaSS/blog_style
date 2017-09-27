@@ -34,9 +34,15 @@ Hur redux fungerar i min applikation (t.ex. för login):
 3. Om det är OK, säger reduser authenticated: true.
 I redusers-mappen ställs villkoren för hur applicationen ska fungera. I actions-mappen finns actions eller stegen som utförs när programmet körs.
 
+
 Vilka teknologier används i appen:
 * create-react-app,
 * react-redux,
 * firebase som databasen,
 * react-router,
 * styled-components.
+
+
+Om jag har mer tid, skulle jag göra följande:
+* lägga till post till favoriten eller spara post,
+* användarens profil (sparande post, likes, kommentarer)
