@@ -18,6 +18,13 @@ Vad man kan göra på applikationen:
   * En användare kan ta bort sin röst från en post.
   * Email-adress, som gillar post, visas upp i popup fönstret.
 * Man kan kommentera inlägg. Email-adress, som kommenterar post, visas upp i popup fönstret.
+* Man kan söka och filtrera i informationen som visas på sidan med hjälp av 3st fält:
+  * checkbox "Today's posts" - i json fil finns det senaste inlägget för den 12 september,
+  * checkbox "Most liked posts",
+  * input-fält "Hachtag".
+
+
+Man kan söka och filtera i informationen som visas på sidan med hjälp av minst 3st input-fält eller knappar (radio buttons etc.). Hämtar du recept så kan det t.ex. vara en checkbox som filtrerar efter vegetariska alternativ. Här kan du antingen välja att filtrera efter det redan existerande innehåller eller göra ett nytt kall mot din databas eller externt API.
 
 
 Hur redux fungerar i min applikation (t.ex. för login):
