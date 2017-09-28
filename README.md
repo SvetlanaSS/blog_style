@@ -8,7 +8,8 @@ En navigation mellan menyalternativ görs med hjälp av react-router.
 Allt innehålet för alla menyalternativ hämtas från databasen en gång och sedan visas ett visst innehåll för det valda menyalternativet.
 
 Vad man kan göra på applikationen:
-* Logga in med email (test user: login: admin@gmail.com, lösenord: admin123).
+* Registrera en ny användare och logga in på applikationen.
+* Logga in med email och password (test user: login: admin@gmail.com, lösenord: admin123).
   Det finns 2 valideringar: att en email-adress är valid och att ett lösenord måste vara minst 6 tecken långt. Om email-adressen eller lösenordet inte är korrekta, visas upp ett error.
 * Logga in facebook.
 * Det finns loader på login-sidan när man loggar in.

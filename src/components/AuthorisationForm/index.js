@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import FacebookAuthorisation from './FacebookAuthorisation';
 import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
 import Loader from '../Loader';
 
 class AuthorisationForm extends Component {
@@ -30,6 +31,7 @@ class AuthorisationForm extends Component {
       <WindowForm>
         <FacebookAuthorisation />
         <Loader />
+        <SignUpForm />
         <LoginForm />
         <BottomDiv>
           By creating an account, I accept BlogStyle's Terms of Service

@@ -8,6 +8,28 @@ import {
 } from './types';
 import Firebase from 'firebase';
 
+// Registrartion
+export function signUpUser(email, password) {
+  return dispatch => {
+    dispatch({ type: AUTH_STARTED });
+    dispatch(showLoader());
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        dispatch({ type: USER_AUTHORIZED });
+        dispatch(hideLoader());
+      })
+      .catch(error => {
+        if (error.code === 'auth/wrong-password') {
+          dispatch({ type: AUTH_ERROR, message: 'Wrong password.' });
+        } else {
+          dispatch({ type: AUTH_ERROR, message: error.message });
+          dispatch(hideLoader());
+        }
+      });
+  };
+}
+
+// Login
 export function signInUser(email, password) {
   return dispatch => {
     dispatch({ type: AUTH_STARTED });
