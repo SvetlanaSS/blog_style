@@ -5,6 +5,15 @@ import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import './style.css';
 
+const Container = styled.div`
+  padding-top: 1rem;
+`;
+
+const ContainerForOr = styled.div`
+  padding-bottom: 1rem;
+  text-align: center;
+`;
+
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
@@ -44,14 +53,6 @@ class SignUpForm extends Component {
   }
 
   render() {
-    const Container = styled.div`
-      padding-top: 1rem;
-    `;
-
-    const ContainerForOr = styled.div`
-      padding-bottom: 1rem;
-      text-align: center;
-    `;
 
     const { name, email, password, emailError, passwordError } = this.state;
     const emailErrorMessage = emailError ? 'hasDanger' : '';

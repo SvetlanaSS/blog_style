@@ -5,6 +5,10 @@ import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import './style.css';
 
+const Container = styled.div`
+  padding-top: 1rem;
+`;
+
 class LoginForm extends Component {
   constructor(props) {
     super(props);
@@ -44,9 +48,6 @@ class LoginForm extends Component {
   }
 
   render() {
-    const Container = styled.div`
-      padding-top: 1rem;
-    `;
 
     const { email, password, emailError, passwordError } = this.state;
     const emailErrorMessage = emailError ? 'hasDanger' : '';
