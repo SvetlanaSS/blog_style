@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signInUser } from '../../../actions/auth';
 import { bindActionCreators } from 'redux';
+import styled from 'styled-components';
 import './style.css';
 
 class LoginForm extends Component {
@@ -43,6 +44,10 @@ class LoginForm extends Component {
   }
 
   render() {
+    const Container = styled.div`
+      padding-top: 1rem;
+    `;
+
     const { email, password, emailError, passwordError } = this.state;
     const emailErrorMessage = emailError ? 'hasDanger' : '';
     const passwordErrorMessage = passwordError ? 'hasDanger' : '';
@@ -60,7 +65,7 @@ class LoginForm extends Component {
             />
             { emailError && <div>Email is not valid!</div> }
           </div>
-          <div style={{paddingTop: '1rem'}} className="form-group">
+          <Container className="form-group">
             <input
               type="password"
               name="password"
@@ -69,18 +74,18 @@ class LoginForm extends Component {
               onChange={this.handleOnChange}
             />
             { passwordError && <div>Password is too short!</div> }
-          </div>
-          <div style={{paddingTop: '1rem'}}>
+          </Container>
+          <Container>
             <input
               disabled={!(email && password)}
               type="submit"
               className="btn btn-block"
               value="Log in"
             />
-          </div>
-          <div style={{textAlign: 'center', paddingTop: '1rem'}}>
+          </Container>
+          <Container>
             {this.props.message}
-          </div>
+          </Container>
         </form>
       </section>
     );

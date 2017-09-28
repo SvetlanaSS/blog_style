@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signUpUser } from '../../../actions/auth';
 import { bindActionCreators } from 'redux';
+import styled from 'styled-components';
 import './style.css';
 
 class SignUpForm extends Component {
@@ -43,6 +44,15 @@ class SignUpForm extends Component {
   }
 
   render() {
+    const Container = styled.div`
+      padding-top: 1rem;
+    `;
+
+    const ContainerForOr = styled.div`
+      padding-bottom: 1rem;
+      text-align: center;
+    `;
+
     const { name, email, password, emailError, passwordError } = this.state;
     const emailErrorMessage = emailError ? 'hasDanger' : '';
     const passwordErrorMessage = passwordError ? 'hasDanger' : '';
@@ -59,7 +69,7 @@ class SignUpForm extends Component {
               onChange={this.handleOnChange}
             />
           </div>
-          <div style={{paddingTop: '1rem'}}>
+          <Container>
             <input
               type="text"
               name="email"
@@ -68,8 +78,8 @@ class SignUpForm extends Component {
               onChange={this.handleOnChange}
             />
             { emailError && <div>Email is not valid!</div> }
-          </div>
-          <div style={{paddingTop: '1rem'}} className="form-group">
+          </Container>
+          <Container className="form-group">
             <input
               type="password"
               name="password"
@@ -78,17 +88,17 @@ class SignUpForm extends Component {
               onChange={this.handleOnChange}
             />
             { passwordError && <div>Password is too short!</div> }
-          </div>
-          <div style={{paddingTop: '1rem'}}>
+          </Container>
+          <Container>
             <input
               disabled={!(name && email && password)}
               type="submit"
               className="btn btn-block"
               value="Sign Up"
             />
-          </div>
+          </Container>
           <div style={{textAlign: 'center', paddingTop: '1rem'}}>
-            <div style={{paddingBottom: '1rem', textAlign: 'center'}}>Or</div>
+            <ContainerForOr>Or</ContainerForOr>
             {this.props.message}
           </div>
         </form>
