@@ -45,4 +45,4 @@ Vilka teknologier används i appen:
 
 Om jag har mer tid, skulle jag göra följande:
 * lägga till post till favoriten eller spara post,
-* användarens profil (sparande post, likes, kommentarer)
+* användarens profil (namn, sparande post, likes, kommentarer)

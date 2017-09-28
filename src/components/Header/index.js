@@ -16,7 +16,7 @@ class Header extends Component {
       background: #FCFBFB;
       height: 5rem;
       left: 0;
-      overflow:auto;
+      overflow: auto;
       right: 0;
       top: 0;
       z-index: 999;
@@ -31,7 +31,7 @@ class Header extends Component {
     const IconContainer = styled.span`
       display: inline-block;
       float: right;
-      padding: .4rem 1rem;
+      padding: 0.4rem 1rem;
     `;
 
     const ButtonContainer = styled.span`
