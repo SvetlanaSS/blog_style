@@ -1,0 +1,4 @@
+.backgroundImage {
+    background: url(../../main_foto.jpg) no-repeat center center fixed;
+    background-size: cover;
+}

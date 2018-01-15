@@ -10,13 +10,16 @@ import BlogPostModal from '../BlogPostModal';
 import AddComment from '../CommentAdd';
 import { showModalSearch } from '../../actions/modalSearch';
 import { forceFetchDataFirebase } from '../../actions/firebaseContent';
+import './App.css';
 
 class App extends Component {
   render() {
     const { authenticated, showModalSearch, forceFetchDataFirebase } = this.props;
+
     return (
       <div>
         <Header authenticated={ authenticated } showModalSearch={showModalSearch} />
+        { authenticated ? null : <section className="backgroundImage"></section> }
         { authenticated ? <Menu /> : null }
         { authenticated ? this.props.children : <AuthorisationForm /> }
         <Loader />
