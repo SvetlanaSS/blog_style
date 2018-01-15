@@ -43,7 +43,7 @@ class FacebookAuthorisation extends Component {
           <FBIcon><FaFacebookSquare /></FBIcon>
           <Button
             type="button"
-            className="btn btn-block"
+            className="btn btn-primary btn-block"
             onClick={this.props.signInWithFacebook}
           >
             Continue with Facebook

@@ -94,7 +94,7 @@ class SignUpForm extends Component {
             <input
               disabled={!(name && email && password)}
               type="submit"
-              className="btn btn-block"
+              className="btn btn-primary btn-block"
               value="Sign Up"
             />
           </Container>

@@ -80,7 +80,7 @@ class LoginForm extends Component {
             <input
               disabled={!(email && password)}
               type="submit"
-              className="btn btn-block"
+              className="btn btn-primary btn-block"
               value="Log in"
             />
           </Container>
