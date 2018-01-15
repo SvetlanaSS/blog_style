@@ -10,23 +10,27 @@ import BlogPostModal from '../BlogPostModal';
 import AddComment from '../CommentAdd';
 import { showModalSearch } from '../../actions/modalSearch';
 import { forceFetchDataFirebase } from '../../actions/firebaseContent';
-import './App.css';
+import styled from 'styled-components';
+import foto from './main_foto.jpg';
+
+const BackgroundImage = styled.section`
+    background: ${p => p.auth ? '' : `url(${foto}) no-repeat center center fixed`};
+    background-size: cover;
+`;
 
 class App extends Component {
   render() {
     const { authenticated, showModalSearch, forceFetchDataFirebase } = this.props;
-
     return (
-      <div>
+      <BackgroundImage auth={authenticated}>
         <Header authenticated={ authenticated } showModalSearch={showModalSearch} />
-        { authenticated ? null : <section className="backgroundImage"></section> }
         { authenticated ? <Menu /> : null }
         { authenticated ? this.props.children : <AuthorisationForm /> }
         <Loader />
         <BlogPostModal />
         <AddComment forceFetchDataFirebase={forceFetchDataFirebase}/>
         <Footer />
-      </div>
+      </BackgroundImage>
     );
   }
 }
