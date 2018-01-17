@@ -34,12 +34,12 @@ ReactDOM.render(
 );
 registerServiceWorker();
 
-if (module.hot) {
-  module.hot.accept(Provider, () => {
-    const NextApp = require(Provider).default;
-    ReactDOM.render(
-      <NextApp />,
-      document.getElementById('root')
-    );
-  });
-}
+// if (module.hot) {
+//   module.hot.accept(Provider, () => {
+//     const NextApp = require(Provider).default;
+//     ReactDOM.render(
+//       <NextApp />,
+//       document.getElementById('root')
+//     );
+//   });
+// }
