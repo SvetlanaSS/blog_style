@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import LoginForm from '../components/AutorisationForm/LoginForm';
+import LoginForm from '../components/AuthorisationForm/LoginForm';
 
 it('simulate login failed', () => {
   const fakeLogin = jest.fn();
