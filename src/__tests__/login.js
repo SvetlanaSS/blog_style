@@ -1,25 +1,17 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import LoginForm from '../components/AuthorisationForm/LoginForm';
-//
-// it('simulate login failed', () => {
-//   const fakeLogin = jest.fn();
-//   const wrapper = mount(<LoginForm loginSuccessful={fakeLogin} />);
-//   const emailEvent = {target: {name: 'email', value: 'admin@gmail.com'}};
-//   const passwordEvent = {target: {name: 'password', value: 'admin'}};
-//   wrapper.find('input[name="email"]').simulate('change', emailEvent);
-//   wrapper.find('input[name="password"]').simulate('change', passwordEvent);
-//   wrapper.find('[data-test="form"]').simulate('submit');
-//   expect(wrapper.find('.error').exists()).toBeTruthy();
-// });
-//
-// it('simulate login success', () => {
-//   const fakeLogin = jest.fn();
-//   const wrapper = mount(<LoginForm loginSuccessful={fakeLogin} />);
-//   const emailEvent = {target: {name: 'email', value: 'admin@gmail.com'}};
-//   const passwordEvent = {target: {name: 'password', value: 'admin123'}};
-//   wrapper.find('input[name="email"]').simulate('change', emailEvent);
-//   wrapper.find('input[name="password"]').simulate('change', passwordEvent);
-//   wrapper.find('[data-test="form"]').simulate('submit');
-//   expect(wrapper.find('.success').exists()).toBeTruthy();
-// });
+import React from 'react';
+import { mount } from 'enzyme';
+import LoginForm from '../components/AuthorisationForm/LoginForm';
+import reduxStore from '../store';
+const store = reduxStore();
+const email = 'admin@gmail.com';
+const wrongPassword = 'admin';
+
+it('simulate login failed', () => {
+  const wrapper = mount(<LoginForm store={store} />);
+  const emailEvent = {target: {name: 'email', value: email}};
+  const passwordEvent = {target: {name: 'password', value: wrongPassword}};
+  wrapper.find('input[name="email"]').simulate('change', emailEvent);
+  wrapper.find('input[name="password"]').simulate('change', passwordEvent);
+  wrapper.find('[data-test="form"]').simulate('submit');
+  expect(wrapper.find('.hasDanger').exists()).toBeTruthy();
+});

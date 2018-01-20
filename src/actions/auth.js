@@ -21,6 +21,7 @@ export function signUpUser(email, password) {
       .catch(error => {
         if (error.code === 'auth/wrong-password') {
           dispatch({ type: AUTH_ERROR, message: 'Wrong password.' });
+          dispatch(hideLoader());
         } else {
           dispatch({ type: AUTH_ERROR, message: error.message });
           dispatch(hideLoader());
@@ -42,6 +43,7 @@ export function signInUser(email, password) {
       .catch(error => {
         if (error.code === 'auth/wrong-password') {
           dispatch({ type: AUTH_ERROR, message: 'Wrong password.' });
+          dispatch(hideLoader());
         } else {
           dispatch({ type: AUTH_ERROR, message: error.message });
           dispatch(hideLoader());

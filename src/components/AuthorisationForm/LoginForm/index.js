@@ -10,15 +10,12 @@ const Container = styled.div`
 `;
 
 class LoginForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      emailError: false,
-      passwordError: false
-    };
-  }
+  state = {
+    email: '',
+    password: '',
+    emailError: false,
+    passwordError: false
+  };
 
   handleOnChange = (e) => {
     this.setState({ [e.target.name] : e.target.value });
@@ -55,7 +52,9 @@ class LoginForm extends Component {
 
     return (
       <section>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          data-test="form"
+          onSubmit={this.handleSubmit}>
           <div>
             <input
               type="text"
