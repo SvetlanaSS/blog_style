@@ -18,7 +18,7 @@ const BackgroundImage = styled.section`
     background-size: cover;
 `;
 
-class App extends Component {
+export class App extends Component {
   render() {
     const { authenticated, showModalSearch, forceFetchDataFirebase } = this.props;
     return (

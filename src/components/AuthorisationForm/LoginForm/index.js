@@ -9,7 +9,7 @@ const Container = styled.div`
   padding-top: 1rem;
 `;
 
-class LoginForm extends Component {
+export class LoginForm extends Component {
   state = {
     email: '',
     password: '',

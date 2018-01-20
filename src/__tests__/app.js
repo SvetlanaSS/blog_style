@@ -1,9 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../components/App/App.js';
-import reduxStore from '../store';
-const store = reduxStore();
+import { App } from '../components/App/App.js';
 
 it('renders without crashing', () => {
-  shallow(<App store={store} />);
+  shallow(<App />);
 });
