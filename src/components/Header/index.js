@@ -8,7 +8,7 @@ import FaSearch from 'react-icons/lib/fa/search';
 import logo from './logo.png';
 import { signOutUser } from '../../actions/auth';
 
-class Header extends Component {
+export class Header extends Component {
   render() {
     const { authenticated, showModalSearch, signOutUser } = this.props;
 
