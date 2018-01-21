@@ -14,7 +14,7 @@ const ContainerForOr = styled.div`
   text-align: center;
 `;
 
-class SignUpForm extends Component {
+export class SignUpForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,7 +60,9 @@ class SignUpForm extends Component {
 
     return (
       <section>
-        <form onSubmit={this.handleSubmit}>
+        <form
+          data-test="form"
+          onSubmit={this.handleSubmit}>
           <div>
             <input
               type="text"
