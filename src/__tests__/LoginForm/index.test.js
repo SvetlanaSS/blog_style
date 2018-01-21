@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { LoginForm } from '../components/AuthorisationForm/LoginForm';
+import { LoginForm } from '../../components/AuthorisationForm/LoginForm';
 const email = 'admin@gmail.com';
 const wrongPassword = 'admin';
 const correctPassword = 'admin123';

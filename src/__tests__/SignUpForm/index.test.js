@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { SignUpForm } from '../components/AuthorisationForm/SignUpForm';
+import { SignUpForm } from '../../components/AuthorisationForm/SignUpForm';
 
 const nameEvent = { target: { name: 'name', value: 'John Doe' }};
 const emailEvent = { target: { name: 'email', value: 'admin@gmail.com' }};
