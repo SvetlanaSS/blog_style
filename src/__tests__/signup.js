@@ -30,3 +30,12 @@ it('simulate signup failed with an invalid short password', () => {
   expect(wrapper.find('.hasDanger').exists()).toBeTruthy();
   expect(wrapper.find('input[name="password"]').closest('div').text()).toEqual('Password is too short!');
 });
+
+it('simulate signup success', () => {
+  const wrapper = mount(<SignUpForm signUpUser={jest.fn()} />);
+  wrapper.find('input[name="name"]').simulate('change', nameEvent);
+  wrapper.find('input[name="email"]').simulate('change', emailEvent);
+  wrapper.find('input[name="password"]').simulate('change', passwordEvent);
+  wrapper.find('[data-test="form"]').simulate('submit');
+  expect(wrapper.props().signUpUser.mock.calls.length).toBe(1);
+});
