@@ -39,7 +39,6 @@ class Menu extends Component {
             <MenuList><MenuLink to="/fashion">Fashion</MenuLink></MenuList>
             <MenuList><MenuLink to="/beauty">Beauty</MenuLink></MenuList>
             <MenuList><MenuLink to="/fitness">Fitness</MenuLink></MenuList>
-            {/* <MenuList><MenuLink to="/lifestyle">Lifestyle</MenuLink></MenuList> */}
           </ul>
         </MenuWrapper>
       </nav>
