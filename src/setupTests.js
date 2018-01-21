@@ -6,6 +6,7 @@ configure({ adapter: new Adapter() });
 const localStorageMock = (() => {
   let store = {};
   return {
+    'firebase:authUser:': { email: 'test@test.com' }, 
     getItem: jest.fn(key => store[key]),
     setItem: jest.fn((key, value) => {
       store[key] = value.toString();
