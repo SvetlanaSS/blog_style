@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../../components/Footer';
 import { mount } from 'enzyme';
 
-fit('a tags contain social media links', () => {
+it('a tags contains social media links', () => {
   const result = [
     'https://www.facebook.com/',
     'https://www.instagram.com',
