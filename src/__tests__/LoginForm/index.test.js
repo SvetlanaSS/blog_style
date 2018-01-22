@@ -33,3 +33,27 @@ it('Log in button is disabled', () => {
   const wrapper = mount(<LoginForm signInUser={jest.fn()} />);
   expect(wrapper.find('input[type="submit"]').props().disabled).toBe(true);
 });
+
+it('returns true with a valid email', () => {
+  const wrapper = mount(<LoginForm signInUser={jest.fn()} />);
+  const email = 'admin@gmail.com';
+  expect(wrapper.instance().validateEmail(email)).toBe(true);
+});
+
+it('returns false with an invalid email', () => {
+  const wrapper = mount(<LoginForm signInUser={jest.fn()} />);
+  const email = 'admin.gmail.com';
+  expect(wrapper.instance().validateEmail(email)).toBe(false);
+});
+
+it('returns true with a valid password', () => {
+  const wrapper = mount(<LoginForm signInUser={jest.fn()} />);
+  const password = 'qwerty123';
+  expect(wrapper.instance().validatePassword(password)).toBe(true);
+});
+
+it('returns false with an invalid password', () => {
+  const wrapper = mount(<LoginForm signInUser={jest.fn()} />);
+  const password = '123';
+  expect(wrapper.instance().validatePassword(password)).toBe(false);
+});
