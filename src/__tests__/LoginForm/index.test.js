@@ -28,3 +28,8 @@ it('simulate login success', () => {
   expect(wrapper.state('email')).toBe(email);
   expect(wrapper.state('password')).toBe(correctPassword);
 });
+
+it('Log in button is disabled', () => {
+  const wrapper = mount(<LoginForm signInUser={jest.fn()} />);
+  expect(wrapper.find('input[type="submit"]').props().disabled).toBe(true);
+});
