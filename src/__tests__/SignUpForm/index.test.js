@@ -39,3 +39,27 @@ it('simulate signup success', () => {
   wrapper.find('[data-test="form"]').simulate('submit');
   expect(wrapper.props().signUpUser.mock.calls.length).toBe(1);
 });
+
+it('returns true with a valid email', () => {
+  const wrapper = mount(<SignUpForm signUpUser={jest.fn()} />);
+  const email = 'admin@gmail.com';
+  expect(wrapper.instance().validateEmail(email)).toBe(true);
+});
+
+it('returns false with an invalid email', () => {
+  const wrapper = mount(<SignUpForm signUpUser={jest.fn()} />);
+  const email = 'admin.gmail.com';
+  expect(wrapper.instance().validateEmail(email)).toBe(false);
+});
+
+it('returns true with a valid password', () => {
+  const wrapper = mount(<SignUpForm signUpUser={jest.fn()} />);
+  const password = 'qwerty123';
+  expect(wrapper.instance().validatePassword(password)).toBe(true);
+});
+
+it('returns false with an invalid password', () => {
+  const wrapper = mount(<SignUpForm signUpUser={jest.fn()} />);
+  const password = '123';
+  expect(wrapper.instance().validatePassword(password)).toBe(false);
+});

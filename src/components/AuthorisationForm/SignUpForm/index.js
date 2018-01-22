@@ -30,13 +30,25 @@ export class SignUpForm extends Component {
     this.validateField(e.target.name, e.target.value);
   }
 
+  validateEmail = (inputEmail) => {
+    const result = inputEmail.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+    if (result) return true;
+    else return false;
+  };
+
+  validatePassword = (inputPassword) => {
+    const result = inputPassword.length;
+    if (result >= 6) return true;
+    else return false;
+  }
+
   validateField = (fieldName, value) => {
     switch(fieldName) {
     case 'email':
-      value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) ? this.setState({ emailError: false }) : this.setState({ emailError: true });
+      this.validateEmail(value) ? this.setState({ emailError: false }) : this.setState({ emailError: true });
       break;
     case 'password':
-      value.length >= 6 ? this.setState({ passwordError: false }) : this.setState({ passwordError: true });
+      this.validatePassword(value) ? this.setState({ passwordError: false }) : this.setState({ passwordError: true });
       break;
     default:
       break;
