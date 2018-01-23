@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Heart from '../../components/Heart';
+import Heart from '../../../components/Heart';
+
 const postLikes = { key1: { email: 'test@test.com' }, key2: { email: 'hi@hi.com' } };
 const likesList = {  };
 

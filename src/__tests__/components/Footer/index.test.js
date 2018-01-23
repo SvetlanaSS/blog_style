@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../../components/Footer';
+import Footer from '../../../components/Footer';
 import { mount } from 'enzyme';
 
 it('a tags contains social media links', () => {
