@@ -4,9 +4,6 @@ import {
 } from '../../../actions/types';
 import * as actions from '../../../actions/loader';
 
-// import * as actions from '../../actions/TodoActions'
-// import * as types from '../../constants/ActionTypes'
-
 describe('loader actions: show', () => {
   it('should show loader', () => {
     const expectedAction = {
