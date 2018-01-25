@@ -6,7 +6,7 @@ import { hideModalAddComment } from '../../actions/modalAddComment';
 import { readEmailFromLocalStorage } from '../../helpers';
 import firebase from '../../api/firebase';
 
-class AddComment extends Component {
+export class AddComment extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,9 @@ class AddComment extends Component {
               <Modal.Title id="contained-modal-title-sm">Add comment</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <form onSubmit={this.handleSubmit}>
+              <form
+                data-test="form"
+                onSubmit={this.handleSubmit}>
                 <div style={{paddingBottom: '1.5rem'}}>
                   <textarea
                     type="text"
