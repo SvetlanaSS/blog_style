@@ -7,7 +7,7 @@ import AuthorisationForm from '../AuthorisationForm';
 import Loader from '../Loader';
 import Menu from '../Menu';
 import BlogPostModal from '../BlogPostModal';
-import AddComment from '../CommentAdd';
+import AddComment from '../AddComment';
 import { showModalSearch } from '../../actions/modalSearch';
 import { forceFetchDataFirebase } from '../../actions/firebaseContent';
 import styled from 'styled-components';
