@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Modal, Button, Thumbnail } from 'react-bootstrap';
 import { hideModalPost } from '../../actions/modalPost';
 
-class BlogPostModal extends Component {
+export class BlogPostModal extends Component {
   renderLikes = () => {
     const { post } = this.props;
     const likes = Object.keys(post.likes).length;
