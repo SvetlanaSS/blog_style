@@ -5,7 +5,7 @@ import { AddComment } from '../../../components/AddComment';
 beforeEach(() => localStorage.clear());
 afterEach(() => localStorage.clear());
 
-fit('simulate add comment', () => {
+it('simulate add comment', () => {
   const user = JSON.stringify({ email: 'test@test.com', id: 1 });
   localStorage.setItem('firebase:authUser:', user);
   const wrapper = mount(
