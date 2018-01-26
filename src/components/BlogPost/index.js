@@ -7,7 +7,7 @@ import Heart from '../Heart';
 import { showModalPost } from '../../actions/modalPost';
 import { showModalAddComment } from '../../actions/modalAddComment';
 
-class BlogPost extends Component {
+export class BlogPost extends Component {
   renderPopoverLikes = (likes) => {
     return (
       <Popover id="popover-positioned-bottom" title="Liked by">
