@@ -6,7 +6,7 @@ import BlogPost from '../BlogPost';
 import { Grid, Row } from 'react-bootstrap';
 import Search from '../Search';
 
-class Page extends Component {
+export class Page extends Component {
 
   componentDidMount() {
     this.props.fetchDataFirebase();
@@ -20,11 +20,11 @@ class Page extends Component {
         obj[i] = data.slice(i, i + chunk);
       }
 
-      return Object.keys(obj).map(key => {
+      return Object.keys(obj).map((key, i) => {
         return (
-          <Row key={key} className="show-grid">
-            {obj[key].map(post => {
-              return <BlogPost key={post.id} post={post} {...this.props} />;
+          <Row key={i} className="show-grid">
+            {obj[key].map((post, i) => {
+              return <BlogPost key={i} post={post} {...this.props} />;
             })}
           </Row>
         );
