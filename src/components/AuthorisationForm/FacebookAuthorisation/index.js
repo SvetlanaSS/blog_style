@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import FaFacebookSquare from 'react-icons/lib/fa/facebook-square';
 import { signInWithFacebook } from '../../../actions/auth';
 
-class FacebookAuthorisation extends Component {
+export class FacebookAuthorisation extends Component {
   render() {
     const Text = styled.div `
       margin: 0 auto;
