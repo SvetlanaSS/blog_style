@@ -5,7 +5,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import Loader from '../Loader';
 
-class AuthorisationForm extends Component {
+export class AuthorisationForm extends Component {
   render() {
     const WindowForm = styled.div`
       width: 100%;
