@@ -19,7 +19,7 @@ const Checkbox = styled.span`
   margin: 0 1rem;
 `;
 
-class Search extends Component {
+export class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
