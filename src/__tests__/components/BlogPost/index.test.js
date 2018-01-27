@@ -1,11 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { BlogPost } from '../../../components/BlogPost';
 
-fit('should render one like in the blogpost', () => {
+it('renders emails of persons who liked the post', () => {
   const user = JSON.stringify({ email: 'test@test.com' });
   localStorage.setItem('firebase:authUser:', user);
-  const likes = [{ email: 'email@email.com' }];
+
+  const firstEmail = 'firstEmail@test.com';
+  const secondEmail = 'secondEmail@test.com';
+  const likes = [{ email: firstEmail }, { email: secondEmail }];
   const post = {
     title: 'post title',
     image_url: 'url',
@@ -15,7 +18,7 @@ fit('should render one like in the blogpost', () => {
     likes
   };
 
-  const wrapper = mount(
+  const wrapper = shallow(
     <BlogPost
       post={post}
       showModalPost={true}
@@ -24,8 +27,8 @@ fit('should render one like in the blogpost', () => {
       location={{ pathname: 'fashion' }}
     />
   );
-  wrapper.find('span').at(0).simulate('mouseEnter');
-  //console.log(wrapper.instance().renderPopoverLikes());
 
-  //expect(wrapper.instance().renderPopoverLikes().props.children).toEqual(expect.arrayContaining([like.length, ' Like']));
+  const childComp = wrapper.instance().renderPopoverLikes(likes).props.children;
+  const arrayOfEmails = childComp.map(node => node.props.children);
+  expect(arrayOfEmails).toEqual([firstEmail, secondEmail]);
 });
