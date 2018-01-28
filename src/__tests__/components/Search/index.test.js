@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { Search } from '../../../components/Search';
+import { mount, shallow } from 'enzyme';
+import ConnectedSearch, { Search } from '../../../components/Search';
+import configureStore from 'redux-mock-store';
 
 it('should render self and subcomponents', () => {
   const wrapper = mount(
@@ -20,4 +21,19 @@ it('should render self and subcomponents', () => {
   expect(wrapper.props().removeMostLikedPostsFilter).toBeDefined();
   expect(wrapper.props().searchByHashtag).toBeDefined();
   expect(wrapper.props().fetchDataFirebase).toBeDefined();
+});
+
+describe('Shallow + passing the {store} directly', () =>{
+  const initialState = { modalSearch: { showModalSearch: true } };
+  const mockStore = configureStore();
+  let store, wrapper;
+
+  beforeEach(()=>{
+    store = mockStore(initialState);
+    wrapper = shallow(<ConnectedSearch store={store} /> );
+  });
+
+  it('render the connected component', () => {
+    expect(wrapper.length).toEqual(1);
+  });
 });
