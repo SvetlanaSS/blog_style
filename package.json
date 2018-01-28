@@ -37,7 +37,10 @@
       "!src/index.js",
       "!src/store/*",
       "!src/api/*",
-      "!src/reducers/index.js"
+      "!src/reducers/index.js",
+      "!src/actions/auth.js",
+      "!src/actions/firebaseContent.js",
+      "!src/actions/likes.js"
     ]
   }
 }
