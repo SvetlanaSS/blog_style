@@ -21,22 +21,3 @@ it('should render self and subcomponents', () => {
   expect(wrapper.props().searchByHashtag).toBeDefined();
   expect(wrapper.props().fetchDataFirebase).toBeDefined();
 });
-
-function setup() {
-  const props = {
-    removeTodaysPostsFilter: jest.fn(),
-    todaysPostsFilter: jest.fn()
-  };
-  const enzymeWrapper = mount(<Search {...props} />);
-  return {
-    props,
-    enzymeWrapper
-  };
-}
-
-fit('should render self and subcomponents', () => {
-  const { enzymeWrapper, props } = setup();
-
-  enzymeWrapper.setState({ todaysPosts: true });
-  console.log(props.todaysPostsFilter.mock);
-});
