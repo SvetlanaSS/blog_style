@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { SignUpForm } from '../../../components/AuthorisationForm/SignUpForm';
+import { mount, shallow } from 'enzyme';
+import ConnectedSignUpForm, { SignUpForm } from '../../../components/AuthorisationForm/SignUpForm';
+import configureStore from 'redux-mock-store';
 
 const nameEvent = { target: { name: 'name', value: 'John Doe' }};
 const emailEvent = { target: { name: 'email', value: 'admin@gmail.com' }};
@@ -62,4 +63,19 @@ it('returns false with an invalid password', () => {
   const wrapper = mount(<SignUpForm signUpUser={jest.fn()} />);
   const password = '123';
   expect(wrapper.instance().validatePassword(password)).toBe(false);
+});
+
+describe('Shallow + passing the {store} directly', () =>{
+  const initialState = { auth: { authenticated: true } };
+  const mockStore = configureStore();
+  let store, wrapper;
+
+  beforeEach(()=>{
+    store = mockStore(initialState);
+    wrapper = shallow(<ConnectedSignUpForm store={store} /> );
+  });
+
+  it('render the connected component', () => {
+    expect(wrapper.length).toEqual(1);
+  });
 });
