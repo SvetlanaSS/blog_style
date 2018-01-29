@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { BlogPostModal } from '../../../components/BlogPostModal';
+import { mount, shallow } from 'enzyme';
+import ConnectedBlogPostModal, { BlogPostModal } from '../../../components/BlogPostModal';
+import configureStore from 'redux-mock-store';
 
 it('should render one like in the blogpost modal', () => {
   const like = ['i like it'];
@@ -80,4 +81,19 @@ it('should render multiple comments in the  blogpost modal', () => {
     />
   );
   expect(wrapper.instance().renderComments().props.children).toEqual(expect.arrayContaining([comments.length, ' Comments']));
+});
+
+describe('Shallow + passing the {store} directly', () =>{
+  const initialState = { modalPost: { showModalPost: true } };
+  const mockStore = configureStore();
+  let store, wrapper;
+
+  beforeEach(()=>{
+    store = mockStore(initialState);
+    wrapper = shallow(<ConnectedBlogPostModal store={store} /> );
+  });
+
+  it('render the connected component', () => {
+    expect(wrapper.length).toEqual(1);
+  });
 });
