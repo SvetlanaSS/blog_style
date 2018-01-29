@@ -45,8 +45,8 @@ export class Header extends Component {
         <Logo to="/">
           <img src={logo} alt="logo" />
         </Logo>
-        { authenticated && <ButtonContainer><Button onClick={() => signOutUser()}>Logout</Button></ButtonContainer> }
-        { authenticated && <IconContainer><FaSearch onClick={() => showModalSearch()} size={25} style={{color: '#635F5F'}} /></IconContainer> }
+        { authenticated && <ButtonContainer><Button data-test="button" onClick={() =>signOutUser()}>Logout</Button></ButtonContainer> }
+        { authenticated && <IconContainer><FaSearch data-test="icon" onClick={() => showModalSearch()} size={25} style={{color: '#635F5F'}} /></IconContainer> }
       </HeaderWrapper>);
   }
 }
