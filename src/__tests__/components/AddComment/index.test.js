@@ -1,6 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { AddComment } from '../../../components/AddComment';
+import { mount, shallow } from 'enzyme';
+import ConnectedAddComment, { AddComment } from '../../../components/AddComment';
+import configureStore from 'redux-mock-store';
 
 beforeEach(() => localStorage.clear());
 afterEach(() => localStorage.clear());
@@ -21,4 +22,19 @@ it('simulate add comment', () => {
   wrapper.find('textarea[name="comment"]').simulate('change', commentEvent);
   wrapper.find('[data-test="form"]').simulate('submit');
   expect(wrapper.state('comment')).toBe(comment);
+});
+
+describe('Shallow + passing the {store} directly', () =>{
+  const initialState = { modalAddComment: { showModalAddComment: true } };
+  const mockStore = configureStore();
+  let store, wrapper;
+
+  beforeEach(()=>{
+    store = mockStore(initialState);
+    wrapper = shallow(<ConnectedAddComment store={store} /> );
+  });
+
+  it('render the connected component', () => {
+    expect(wrapper.length).toEqual(1);
+  });
 });
