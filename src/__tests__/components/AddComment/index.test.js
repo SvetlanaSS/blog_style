@@ -24,6 +24,20 @@ it('simulate add comment', () => {
   expect(wrapper.state('comment')).toBe(comment);
 });
 
+it('should close add comment modal on click cross icon', () => {
+  const hideModalAddComment = jest.fn();
+  const wrapper = shallow(<AddComment authenticated={true} hideModalAddComment={hideModalAddComment} />);
+  wrapper.find('[data-test="cross-icon"]').simulate('hide');
+  expect(hideModalAddComment.mock.calls.length).toBe(1);
+});
+
+it('should close add comment modal on click Cancel', () => {
+  const hideModalAddComment = jest.fn();
+  const wrapper = shallow(<AddComment authenticated={true} hideModalAddComment={hideModalAddComment} />);
+  wrapper.find('[data-test="cancel-button"]').simulate('click');
+  expect(hideModalAddComment.mock.calls.length).toBe(1);
+});
+
 describe('Shallow + passing the {store} directly', () =>{
   const initialState = { modalAddComment: { showModalAddComment: true } };
   const mockStore = configureStore();

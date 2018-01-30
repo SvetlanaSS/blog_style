@@ -36,7 +36,13 @@ export class AddComment extends Component {
     return (
       <section>
         <div className="static-modal">
-          <Modal show={showModalAddComment} onHide={() => hideModalAddComment()} bsSize="small" aria-labelledby="contained-modal-title-sm">
+          <Modal
+            show={showModalAddComment}
+            onHide={() => hideModalAddComment()}
+            bsSize="small"
+            aria-labelledby="contained-modal-title-sm"
+            data-test="cross-icon"
+          >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-sm">Add comment</Modal.Title>
             </Modal.Header>
@@ -54,7 +60,7 @@ export class AddComment extends Component {
                   />
                 </div>
                 <Button type='submit' style={{marginRight: '1rem'}}>Add</Button>
-                <Button onClick={() => hideModalAddComment()}>Cancel</Button>
+                <Button data-test="cancel-button" onClick={() => hideModalAddComment()}>Cancel</Button>
               </form>
             </Modal.Body>
           </Modal>
