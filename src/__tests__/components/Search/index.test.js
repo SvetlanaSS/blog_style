@@ -23,6 +23,13 @@ it('should render self and subcomponents', () => {
   expect(wrapper.props().fetchDataFirebase).toBeDefined();
 });
 
+it('should close search modal on click cross icon', () => {
+  const hideModalSearch = jest.fn();
+  const wrapper = shallow(<Search hideModalSearch={hideModalSearch} />);
+  wrapper.find('[data-test="cross-icon"]').simulate('click');
+  expect(hideModalSearch.mock.calls.length).toBe(1);
+});
+
 describe('Shallow + passing the {store} directly', () =>{
   const initialState = { modalSearch: { showModalSearch: true } };
   const mockStore = configureStore();

@@ -79,7 +79,7 @@ export class Search extends Component {
       <div style={wellStyles}>
         <Collapse in={showSearch}>
           <div>
-            <span><FaClose onClick={() => hideModalSearch()} size={20} style={{color: '#635F5F', float: 'right', margin: '1rem 1.3rem'}}/></span>
+            <span><FaClose onClick={() => hideModalSearch()} data-test="cross-icon" size={20} style={{color: '#635F5F', float: 'right', margin: '1rem 1.3rem'}}/></span>
             <Panel>
               <FormGroup style={{paddingTop: '2rem'}}>
                 <input
