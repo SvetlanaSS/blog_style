@@ -43,6 +43,4 @@ Vilka teknologier används i appen:
 * styled-components.
 
 
-Om jag har mer tid, skulle jag göra följande:
-* lägga till post till favoriten eller spara post,
-* användarens profil (namn, sparande post, likes, kommentarer)
+Applikationen omfattas av enhetstestar och integrationstestar med Jest-ramverk och enzyme.
