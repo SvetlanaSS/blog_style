@@ -53,7 +53,7 @@ export class BlogPostModal extends Component {
           </span>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => hideModalPost()}>Close</Button>
+          <Button onClick={() => hideModalPost()} data-test="cancel-button">Close</Button>
         </Modal.Footer>
       </Modal>
     );

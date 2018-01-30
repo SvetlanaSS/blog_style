@@ -93,8 +93,23 @@ it('should close blog post modal on click cross icon', () => {
     comments: ['comment', 'comment', 'comment', 'comment'],
     likes: ['like']
   };
-  const wrapper = shallow(<BlogPostModal hideModalPost={hideModalPost} post={post} showModalPost={true}/>);
+  const wrapper = shallow(<BlogPostModal hideModalPost={hideModalPost} post={post} showModalPost={true} />);
   wrapper.find('[data-test="cross-icon"]').simulate('hide');
+  expect(hideModalPost.mock.calls.length).toBe(1);
+});
+
+it('should close blog post modal on click Cancel', () => {
+  const hideModalPost = jest.fn();
+  const post = {
+    title: 'post title',
+    image_url: 'url',
+    hashtag: 'hashtag',
+    description: 'description',
+    comments: ['comment', 'comment', 'comment', 'comment'],
+    likes: ['like']
+  };
+  const wrapper = shallow(<BlogPostModal hideModalPost={hideModalPost} post={post} showModalPost={true} />);
+  wrapper.find('[data-test="cancel-button"]').simulate('click');
   expect(hideModalPost.mock.calls.length).toBe(1);
 });
 
