@@ -83,6 +83,21 @@ it('should render multiple comments in the  blogpost modal', () => {
   expect(wrapper.instance().renderComments().props.children).toEqual(expect.arrayContaining([comments.length, ' Comments']));
 });
 
+it('should close blog post modal on click cross icon', () => {
+  const hideModalPost = jest.fn();
+  const post = {
+    title: 'post title',
+    image_url: 'url',
+    hashtag: 'hashtag',
+    description: 'description',
+    comments: ['comment', 'comment', 'comment', 'comment'],
+    likes: ['like']
+  };
+  const wrapper = shallow(<BlogPostModal hideModalPost={hideModalPost} post={post} showModalPost={true}/>);
+  wrapper.find('[data-test="cross-icon"]').simulate('hide');
+  expect(hideModalPost.mock.calls.length).toBe(1);
+});
+
 describe('Shallow + passing the {store} directly', () =>{
   const initialState = { modalPost: { showModalPost: true } };
   const mockStore = configureStore();

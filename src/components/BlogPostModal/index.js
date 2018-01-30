@@ -36,7 +36,7 @@ export class BlogPostModal extends Component {
   render() {
     const { post, showModalPost, hideModalPost } = this.props;
     return (
-      <Modal show={showModalPost} onHide={() => hideModalPost()} bsSize="large" aria-labelledby="contained-modal-title-lg">
+      <Modal show={showModalPost} onHide={() => hideModalPost()} data-test="cross-icon" bsSize="large" aria-labelledby="contained-modal-title-lg">
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-lg">{post.title}</Modal.Title>
         </Modal.Header>
